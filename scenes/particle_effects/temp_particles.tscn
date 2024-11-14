@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dso06eqnphsl5"]
+
+[ext_resource type="Script" path="res://scenes/particle_effects/temp_particles.gd" id="1_n7pki"]
+
+[node name="Temp_Particles" type="Node2D"]
+script = ExtResource("1_n7pki")
+
+[node name="Initial_Particles" type="Node2D" parent="."]
+
+[node name="Chain_Particles" type="Node2D" parent="."]
+
+[node name="Chain_Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Free_Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Chain_Timer" to="." method="_on_chain_timer_timeout"]
+[connection signal="timeout" from="Free_Timer" to="." method="_on_free_timer_timeout"]

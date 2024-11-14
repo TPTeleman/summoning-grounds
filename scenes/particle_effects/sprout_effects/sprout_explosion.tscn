@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://3ffqq3utdjv1"]
+
+[ext_resource type="PackedScene" uid="uid://dso06eqnphsl5" path="res://scenes/particle_effects/temp_particles.tscn" id="1_50uiw"]
+[ext_resource type="Texture2D" uid="uid://cb8ocgqjfr4g8" path="res://assets/sprites/particles/White_Circle.png" id="2_urx4c"]
+
+[sub_resource type="Gradient" id="Gradient_lxoem"]
+offsets = PackedFloat32Array(0, 0.351648, 0.681319, 0.906593)
+colors = PackedColorArray(1, 0.683333, 0, 1, 1, 0.366667, 0, 1, 0.39, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nq0bj"]
+gradient = SubResource("Gradient_lxoem")
+
+[sub_resource type="Curve" id="Curve_5pxpt"]
+_data = [Vector2(0, 0.437263), 0.0, -0.417824, 0, 0, Vector2(1, 0.570342), -4.93288, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rurv2"]
+curve = SubResource("Curve_5pxpt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2o476"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 90.0
+initial_velocity_min = 145.0
+initial_velocity_max = 145.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.05
+scale_max = 0.05
+scale_curve = SubResource("CurveTexture_rurv2")
+color_ramp = SubResource("GradientTexture1D_nq0bj")
+
+[sub_resource type="Gradient" id="Gradient_41y1u"]
+offsets = PackedFloat32Array(0.648352, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sr304"]
+gradient = SubResource("Gradient_41y1u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4gsbt"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(48, 1, 1)
+spread = 180.0
+initial_velocity_min = 75.0
+initial_velocity_max = 75.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+scale_min = 0.03
+scale_max = 0.03
+scale_curve = SubResource("CurveTexture_rurv2")
+color_ramp = SubResource("GradientTexture1D_sr304")
+
+[node name="Sprout_Explosion" instance=ExtResource("1_50uiw")]
+free_delay = 2.0
+
+[node name="Particles" type="GPUParticles2D" parent="Initial_Particles" index="0"]
+emitting = false
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_2o476")
+texture = ExtResource("2_urx4c")
+lifetime = 0.45
+one_shot = true
+explosiveness = 0.55
+
+[node name="Particles2" type="GPUParticles2D" parent="Initial_Particles" index="1"]
+emitting = false
+amount = 24
+process_material = SubResource("ParticleProcessMaterial_4gsbt")
+texture = ExtResource("2_urx4c")
+lifetime = 0.35
+one_shot = true

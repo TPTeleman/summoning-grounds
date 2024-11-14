@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1heqpjmw3i3g"]
+
+[ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_l2hmf"]
+[ext_resource type="Script" path="res://scenes/summons/bodies/cassava_root/cassava_root_body.gd" id="2_ffelk"]
+[ext_resource type="Texture2D" uid="uid://bwslyq5yaoipu" path="res://assets/sprites/summons/cassava_root/cassava_root_state_0_idle.png" id="3_vm843"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsq42"]
+size = Vector2(56, 32)
+
+[node name="Summon_Body" instance=ExtResource("1_l2hmf")]
+script = ExtResource("2_ffelk")
+
+[node name="Sprite" parent="Sprites" index="0"]
+texture = ExtResource("3_vm843")
+
+[node name="Health_Node" parent="Modules" index="0"]
+max_health = 425
+
+[node name="Collision_Shape" parent="Modules/Hitbox_Node" index="0"]
+shape = SubResource("RectangleShape2D_jsq42")

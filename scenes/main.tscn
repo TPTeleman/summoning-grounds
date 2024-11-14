@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://db0evjs442cr"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_u34hk"]
+[ext_resource type="PackedScene" uid="uid://ddj7lxy8426dr" path="res://scenes/main_menu/main_menu.tscn" id="2_kikt3"]
+[ext_resource type="PackedScene" uid="uid://deucr2qqrbhs0" path="res://scenes/world/lawn_map/lawn.tscn" id="3_6x2or"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_u34hk")
+
+[node name="Lawn" parent="." instance=ExtResource("3_6x2or")]
+
+[node name="Main_Menu" parent="." instance=ExtResource("2_kikt3")]
+mouse_filter = 2
+
+[connection signal="play_pressed" from="Main_Menu" to="." method="_on_main_menu_play_pressed"]

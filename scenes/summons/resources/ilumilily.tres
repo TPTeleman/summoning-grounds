@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://dhijwv2q8m8sh"]
+
+[ext_resource type="Script" path="res://scenes/summons/summon_res.gd" id="1_vm4dd"]
+[ext_resource type="PackedScene" uid="uid://cmar8di48lyxe" path="res://scenes/summons/bodies/ilumilily/ilumilily_body.tscn" id="2_3ydrm"]
+
+[resource]
+script = ExtResource("1_vm4dd")
+id = 0
+summon_body = ExtResource("2_3ydrm")
+summon_cost = 25
+starting_charge = 0.0
+summon_cooldown = 5.5
+is_upgrade = false
+placement_tags = Array[String](["takes_space"])
+summon_cell = ""
+cell_type = Array[String](["dirt"])

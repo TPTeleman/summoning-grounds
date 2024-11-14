@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bch6f1v74ldcy"]
+
+[ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_hksis"]
+[ext_resource type="Texture2D" uid="uid://dl82n608enmu5" path="res://assets/sprites/summons/strawberry_lobber/strawberry_lobber_idle.png" id="2_5bif8"]
+[ext_resource type="Script" path="res://scenes/summons/bodies/strawberry_lobber/strawberry_lobber_body.gd" id="2_puu6l"]
+[ext_resource type="Script" path="res://scr/modules/lobbing_node/lobbing_node.gd" id="3_x1575"]
+[ext_resource type="PackedScene" uid="uid://ouu7t25dvdg3" path="res://scenes/projectiles/strawberry_projectile/strawberry_projectile.tscn" id="4_e4dit"]
+[ext_resource type="Script" path="res://scr/modules/lane_detector_node/lane_detector_node.gd" id="5_fk01w"]
+
+[node name="Summon_Body" node_paths=PackedStringArray("lobbing_node", "lane_node") instance=ExtResource("1_hksis")]
+script = ExtResource("2_puu6l")
+lobbing_node = NodePath("Modules/Lobbing_Node")
+lane_node = NodePath("Modules/Lane_Detector_Node")
+
+[node name="Sprite" parent="Sprites" index="0"]
+position = Vector2(-8, -18)
+texture = ExtResource("2_5bif8")
+
+[node name="Lobbing_Node" type="Node" parent="Modules" index="2" node_paths=PackedStringArray("individual", "shoot_pos")]
+script = ExtResource("3_x1575")
+individual = NodePath("../..")
+shoot_pos = NodePath("../../Shoot_Pos")
+projectile = ExtResource("4_e4dit")
+attack_cooldown = 1.75
+attack_variation = 0.185
+damage = 40
+arc_trajectory = 190.0
+
+[node name="Lane_Detector_Node" type="Node" parent="Modules" index="3" node_paths=PackedStringArray("individual")]
+script = ExtResource("5_fk01w")
+individual = NodePath("../..")
+lane_range = 960.0
+
+[node name="Shoot_Pos" type="Marker2D" parent="." index="5"]
+position = Vector2(-36, -35)

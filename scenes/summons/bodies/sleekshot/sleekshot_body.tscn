@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqwqffils0fmx"]
+
+[ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_minyq"]
+[ext_resource type="Script" path="res://scenes/summons/bodies/sleekshot/sleekshot_body.gd" id="2_m5wc0"]
+[ext_resource type="Texture2D" uid="uid://basyxdsu4i00r" path="res://assets/sprites/summons/sleekshot/sleekshot_idle.png" id="3_1m7f5"]
+[ext_resource type="Script" path="res://scr/modules/lobbing_node/lobbing_node.gd" id="4_10c62"]
+[ext_resource type="PackedScene" uid="uid://c00tdh4bwhtg2" path="res://scenes/projectiles/leek_projectile/leek_projectile.tscn" id="5_8tvlf"]
+[ext_resource type="Script" path="res://scr/modules/lane_detector_node/lane_detector_node.gd" id="6_nvrkf"]
+
+[node name="Summon_Body" node_paths=PackedStringArray("lobbing_node", "lane_node") instance=ExtResource("1_minyq")]
+script = ExtResource("2_m5wc0")
+lobbing_node = NodePath("Modules/Lobbing_Node")
+lane_node = NodePath("Modules/Lane_Detector_Node")
+
+[node name="Sprite" parent="Sprites" index="0"]
+position = Vector2(-12, -12)
+texture = ExtResource("3_1m7f5")
+
+[node name="Lobbing_Node" type="Node" parent="Modules" index="2" node_paths=PackedStringArray("individual", "shoot_pos")]
+script = ExtResource("4_10c62")
+individual = NodePath("../..")
+shoot_pos = NodePath("../../Shoot_Pos")
+projectile = ExtResource("5_8tvlf")
+attack_cooldown = 2.15
+attack_variation = 0.215
+damage = 40
+duration = 0.7
+arc_trajectory = 95.0
+
+[node name="Lane_Detector_Node" type="Node" parent="Modules" index="3" node_paths=PackedStringArray("individual")]
+script = ExtResource("6_nvrkf")
+individual = NodePath("../..")
+lanes = {
+-2: false,
+-1: true,
+0: true,
+1: true,
+2: false
+}
+lane_range = 960.0
+
+[node name="Shoot_Pos" type="Marker2D" parent="." index="5"]
+position = Vector2(-19, -20)

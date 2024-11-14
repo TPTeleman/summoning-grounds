@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://xfs8kixa5ikx"]
+
+[ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_awf1p"]
+[ext_resource type="Script" path="res://scenes/summons/bodies/orage/orage_body.gd" id="2_crshn"]
+[ext_resource type="Texture2D" uid="uid://xk3i8se2fuhm" path="res://assets/sprites/summons/orage/orage_idle.png" id="3_r3kw5"]
+[ext_resource type="Script" path="res://scr/modules/detection_node/detection_node.gd" id="4_lm1xl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87ngo"]
+size = Vector2(120, 120)
+
+[node name="Summon_Body" node_paths=PackedStringArray("explosion_area") instance=ExtResource("1_awf1p")]
+script = ExtResource("2_crshn")
+explosion_area = NodePath("Modules/Explosion_Area")
+damage = 1250
+explosion_delay = 0.3
+
+[node name="Sprite" parent="Sprites" index="0"]
+position = Vector2(-4, -16)
+texture = ExtResource("3_r3kw5")
+
+[node name="Health_Node" parent="Modules" index="0"]
+max_health = 25
+
+[node name="Explosion_Area" type="Area2D" parent="Modules" index="2" node_paths=PackedStringArray("individual")]
+position = Vector2(0, -16)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("4_lm1xl")
+individual = NodePath("../..")
+
+[node name="Collision_Shape" type="CollisionShape2D" parent="Modules/Explosion_Area" index="0"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_87ngo")
+debug_color = Color(0.88, 0.2552, 0.66132, 0.0509804)
+
+[node name="Detonate_Timer" type="Timer" parent="." index="5"]
+one_shot = true
+
+[connection signal="timeout" from="Detonate_Timer" to="." method="_on_detonate_timer_timeout"]

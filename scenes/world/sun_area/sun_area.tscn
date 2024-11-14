@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://jxyifyy5cbyi"]
+
+[ext_resource type="Texture2D" uid="uid://g23omxdid0h8" path="res://assets/sprites/particles/sun_ring.png" id="1_nha1t"]
+[ext_resource type="Script" path="res://scenes/world/sun_area/sun_area.gd" id="1_wqqpv"]
+[ext_resource type="Texture2D" uid="uid://b8jeunqduuh5r" path="res://assets/sprites/particles/sun_ball.png" id="2_quvtk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0mloa"]
+radius = 24.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_575bh"]
+font_size = 24
+font_color = Color(1, 0, 0, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Sun_Area" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_wqqpv")
+
+[node name="Sprite_Cluster" type="Node2D" parent="."]
+scale = Vector2(0.75, 0.75)
+
+[node name="Sun_Ring" type="Sprite2D" parent="Sprite_Cluster"]
+texture = ExtResource("1_nha1t")
+
+[node name="Sun_Center" type="Sprite2D" parent="Sprite_Cluster"]
+texture = ExtResource("2_quvtk")
+
+[node name="Mouse_Area" type="Area2D" parent="."]
+
+[node name="Collision_Shape" type="CollisionShape2D" parent="Mouse_Area"]
+shape = SubResource("CircleShape2D_0mloa")
+
+[node name="Despawn_Timer" type="Timer" parent="."]
+wait_time = 6.5
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -40.0
+offset_top = -48.0
+offset_right = 40.0
+offset_bottom = -24.0
+text = "0.0"
+label_settings = SubResource("LabelSettings_575bh")
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Mouse_Area" to="." method="_on_mouse_area_mouse_entered"]
+[connection signal="timeout" from="Despawn_Timer" to="." method="_on_despawn_timer_timeout"]

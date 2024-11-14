@@ -1,0 +1,200 @@
+[gd_resource type="Resource" script_class="LEVEL_DATA" load_steps=26 format=3 uid="uid://c0wn5nsbpd87"]
+
+[ext_resource type="Texture2D" uid="uid://b8k8e2aju8jap" path="res://assets/sprites/environment/map_bits/mapbit_003.png" id="1_orxwc"]
+[ext_resource type="Script" path="res://scr/classes/level_data.gd" id="1_ysoa7"]
+[ext_resource type="Script" path="res://scr/classes/wave_data.gd" id="2_vn6b6"]
+[ext_resource type="Script" path="res://scr/classes/horde_data.gd" id="3_rk6b1"]
+[ext_resource type="PackedScene" uid="uid://cg5cjwamygmk" path="res://scenes/monsters/basic_zombie/basic_zombie.tscn" id="4_u6esn"]
+[ext_resource type="PackedScene" uid="uid://b6p55xptu0l7u" path="res://scenes/monsters/cone_zombie/cone_zombie.tscn" id="5_lv8aq"]
+[ext_resource type="PackedScene" uid="uid://byt6sielbmukn" path="res://scenes/monsters/bucket_zombie/bucket_zombie.tscn" id="6_5qygb"]
+
+[sub_resource type="Resource" id="Resource_f04w7"]
+script = ExtResource("3_rk6b1")
+zombie_per_lane = {
+-1: [0],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_et0su"]
+script = ExtResource("2_vn6b6")
+zombie_types = Array[PackedScene]([ExtResource("4_u6esn")])
+hordes = Array[ExtResource("3_rk6b1")]([SubResource("Resource_f04w7")])
+spawn_rate = 12.0
+zombie_points = 3
+wave_duration = 42.0
+
+[sub_resource type="Resource" id="Resource_gasba"]
+script = ExtResource("3_rk6b1")
+zombie_per_lane = {
+-1: [0, 0],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_vdm0y"]
+script = ExtResource("2_vn6b6")
+zombie_types = Array[PackedScene]([ExtResource("4_u6esn")])
+hordes = Array[ExtResource("3_rk6b1")]([SubResource("Resource_gasba")])
+spawn_rate = 24.0
+zombie_points = 3
+wave_duration = 42.0
+
+[sub_resource type="Resource" id="Resource_on1gj"]
+script = ExtResource("3_rk6b1")
+zombie_per_lane = {
+-1: [0],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_biqh7"]
+script = ExtResource("3_rk6b1")
+zombie_per_lane = {
+-1: [0, 0],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_ww2tt"]
+script = ExtResource("3_rk6b1")
+zombie_per_lane = {
+-1: [0, 0],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_2wea3"]
+script = ExtResource("2_vn6b6")
+zombie_types = Array[PackedScene]([ExtResource("4_u6esn")])
+hordes = Array[ExtResource("3_rk6b1")]([SubResource("Resource_on1gj"), SubResource("Resource_biqh7"), SubResource("Resource_ww2tt")])
+spawn_rate = 14.0
+zombie_points = 4
+wave_duration = 42.0
+
+[sub_resource type="Resource" id="Resource_rxlrg"]
+script = ExtResource("3_rk6b1")
+zombie_per_lane = {
+-1: [0, 1],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_en1l2"]
+script = ExtResource("3_rk6b1")
+zombie_per_lane = {
+-1: [0, 0, 1],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_h5nh2"]
+script = ExtResource("3_rk6b1")
+zombie_per_lane = {
+-1: [0, 0, 0],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_3mo2p"]
+script = ExtResource("2_vn6b6")
+zombie_types = Array[PackedScene]([ExtResource("4_u6esn"), ExtResource("5_lv8aq")])
+hordes = Array[ExtResource("3_rk6b1")]([SubResource("Resource_rxlrg"), SubResource("Resource_en1l2"), SubResource("Resource_h5nh2")])
+spawn_rate = 15.0
+zombie_points = 6
+wave_duration = 42.0
+
+[sub_resource type="Resource" id="Resource_ehjw7"]
+script = ExtResource("3_rk6b1")
+zombie_per_lane = {
+-1: [0, 1],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_8mhep"]
+script = ExtResource("3_rk6b1")
+zombie_per_lane = {
+-1: [0, 1, 0],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_ba63r"]
+script = ExtResource("3_rk6b1")
+zombie_per_lane = {
+-1: [0, 1, 0],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_qo4jn"]
+script = ExtResource("2_vn6b6")
+zombie_types = Array[PackedScene]([ExtResource("4_u6esn"), ExtResource("5_lv8aq")])
+hordes = Array[ExtResource("3_rk6b1")]([SubResource("Resource_ehjw7"), SubResource("Resource_8mhep"), SubResource("Resource_ba63r")])
+spawn_rate = 16.0
+zombie_points = 9
+wave_duration = 42.0
+
+[sub_resource type="Resource" id="Resource_2bfky"]
+script = ExtResource("3_rk6b1")
+zombie_per_lane = {
+-1: [0, 1, 0, 1, 0, 2],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_rehm3"]
+script = ExtResource("2_vn6b6")
+zombie_types = Array[PackedScene]([ExtResource("4_u6esn"), ExtResource("5_lv8aq"), ExtResource("6_5qygb")])
+hordes = Array[ExtResource("3_rk6b1")]([SubResource("Resource_2bfky"), SubResource("Resource_2bfky"), SubResource("Resource_2bfky"), SubResource("Resource_2bfky"), SubResource("Resource_2bfky"), SubResource("Resource_2bfky"), SubResource("Resource_2bfky"), SubResource("Resource_2bfky")])
+spawn_rate = 20.0
+zombie_points = 9999
+wave_duration = 999999.0
+
+[resource]
+script = ExtResource("1_ysoa7")
+map = ExtResource("1_orxwc")
+waves = Array[ExtResource("2_vn6b6")]([SubResource("Resource_et0su"), SubResource("Resource_vdm0y"), SubResource("Resource_2wea3"), SubResource("Resource_3mo2p"), SubResource("Resource_qo4jn"), SubResource("Resource_rehm3")])
+sun_falls = true
+starting_sun = 0
+sun_amount = 75
+first_sun = 3.5
+sun_cooldown = 28.0
+sun_delay_range = 0.35

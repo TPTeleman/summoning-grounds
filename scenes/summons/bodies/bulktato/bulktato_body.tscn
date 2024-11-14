@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://l870u7xchhtp"]
+
+[ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_3g64t"]
+[ext_resource type="Texture2D" uid="uid://bhvoqwjwh0xsd" path="res://assets/sprites/summons/bulktato/bulktato_state_0_idle.png" id="2_1nt7g"]
+[ext_resource type="Script" path="res://scenes/summons/bodies/bulktato/bulktato_body.gd" id="2_u8qt3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsq42"]
+size = Vector2(56, 32)
+
+[node name="Summon_Body" instance=ExtResource("1_3g64t")]
+script = ExtResource("2_u8qt3")
+
+[node name="Sprite" parent="Sprites" index="0"]
+texture = ExtResource("2_1nt7g")
+
+[node name="Health_Node" parent="Modules" index="0"]
+max_health = 375
+
+[node name="Collision_Shape" parent="Modules/Hitbox_Node" index="0"]
+shape = SubResource("RectangleShape2D_jsq42")

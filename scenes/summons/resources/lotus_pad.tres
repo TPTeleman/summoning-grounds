@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://cscv36u70p6n8"]
+
+[ext_resource type="Script" path="res://scenes/summons/summon_res.gd" id="1_tixgd"]
+[ext_resource type="PackedScene" uid="uid://dwex0sxqalubk" path="res://scenes/summons/bodies/lotus_pad/lotus_pad.tscn" id="2_ileoa"]
+
+[resource]
+script = ExtResource("1_tixgd")
+id = 8
+summon_body = ExtResource("2_ileoa")
+summon_cost = 50
+starting_charge = 2.5
+summon_cooldown = 2.5
+is_upgrade = false
+placement_tags = Array[String](["is_floor"])
+summon_cell = "dirt"
+cell_type = Array[String](["water"])

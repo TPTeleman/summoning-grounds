@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://byt6sielbmukn"]
+
+[ext_resource type="PackedScene" uid="uid://b1fxtl1vyr1qw" path="res://scenes/monsters/monster_body.tscn" id="1_un28v"]
+[ext_resource type="Texture2D" uid="uid://dexwtdmy47iuu" path="res://assets/sprites/enemies/basic_zombie/basic_zombie_1.png" id="2_eh3np"]
+[ext_resource type="Script" path="res://scenes/monsters/armor_zombie.gd" id="2_hgf7p"]
+[ext_resource type="Texture2D" uid="uid://bdfk7o7wd6y7u" path="res://assets/sprites/enemies/basic_zombie/basic_zombie_0.png" id="3_6e70m"]
+[ext_resource type="Texture2D" uid="uid://c21yi3on2ddbe" path="res://assets/sprites/enemies/armor_bucket/armor_bucket_0.png" id="4_yid1u"]
+
+[node name="Monster_Body" instance=ExtResource("1_un28v")]
+script = ExtResource("2_hgf7p")
+armor_type = "bucket"
+spawn_cost = 4
+damaged_texture = ExtResource("2_eh3np")
+
+[node name="Sprite" parent="Sprites" index="0"]
+texture = ExtResource("3_6e70m")
+
+[node name="Armor_Sprite" type="Sprite2D" parent="Sprites/Sprite" index="0"]
+position = Vector2(-2.5, -18)
+texture = ExtResource("4_yid1u")
+
+[node name="Health_Node" parent="Modules" index="0"]
+max_health = 200
+max_armor = 1300
+
+[node name="Hitbox_Node" parent="Modules" index="1"]
+collision_layer = 8
+collision_mask = 0

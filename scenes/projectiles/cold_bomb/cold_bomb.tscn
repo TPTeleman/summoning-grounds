@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://b3axbkkubmwmu"]
+
+[ext_resource type="PackedScene" uid="uid://x0fvxvb64nyr" path="res://scenes/projectiles/straight_projectile.tscn" id="1_6d1vy"]
+[ext_resource type="Texture2D" uid="uid://dvr7aj48bwl6x" path="res://assets/sprites/particles/cold_bomb.png" id="2_d1rmu"]
+[ext_resource type="Script" path="res://scenes/projectiles/cold_bomb/cold_bomb.gd" id="2_htv7g"]
+[ext_resource type="Texture2D" uid="uid://ceqva62us8p4i" path="res://assets/sprites/particles/White_Rhombus_Half.png" id="2_xsdxt"]
+
+[sub_resource type="Gradient" id="Gradient_ly5q0"]
+offsets = PackedFloat32Array(0.10989, 0.461538, 0.824176)
+colors = PackedColorArray(1, 1, 1, 1, 0.42, 0.932333, 1, 1, 0, 0.452333, 0.46, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fnlqd"]
+gradient = SubResource("Gradient_ly5q0")
+
+[sub_resource type="Curve" id="Curve_xkt2d"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.43739, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pd6o4"]
+curve = SubResource("Curve_xkt2d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yvsaq"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 12.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+gravity = Vector3(0, 178, 0)
+scale_min = 0.06
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_pd6o4")
+color_ramp = SubResource("GradientTexture1D_fnlqd")
+
+[node name="Cold_Bomb" instance=ExtResource("1_6d1vy")]
+script = ExtResource("2_htv7g")
+projectile_speed = 280.0
+parent_group = "Summon"
+
+[node name="Particles" type="GPUParticles2D" parent="Sprites" index="0"]
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_yvsaq")
+texture = ExtResource("2_xsdxt")
+lifetime = 0.25
+
+[node name="Sprite" parent="Sprites" index="1"]
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("2_d1rmu")
+
+[node name="Detection_Node" parent="." index="2"]
+collision_mask = 8
+
+[connection signal="_hit_enemy" from="." to="." method="_on__hit_enemy"]

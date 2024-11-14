@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn2g3v2rv1oux"]
+
+[ext_resource type="Script" path="res://scenes/projectiles/lobbed_projectile.gd" id="1_luatb"]
+[ext_resource type="Script" path="res://scr/modules/detection_node/detection_node.gd" id="2_wbdq3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrcr3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1cj0k"]
+
+[node name="Lobbed_Projectile" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_luatb")
+arc_trajectory = 180.0
+
+[node name="Collision_Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hrcr3")
+debug_color = Color(0.431667, 0.7, 0, 0.0588235)
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Sprites"]
+
+[node name="Detection_Node" type="Area2D" parent="." node_paths=PackedStringArray("individual")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_wbdq3")
+individual = NodePath("..")
+
+[node name="Collision_Shape" type="CollisionShape2D" parent="Detection_Node"]
+shape = SubResource("CircleShape2D_1cj0k")
+debug_color = Color(0.571667, 0, 0.7, 0.419608)
+
+[connection signal="area_entered" from="Detection_Node" to="." method="_on_detection_node_area_entered"]

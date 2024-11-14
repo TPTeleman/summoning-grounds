@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="LEVEL_DATA" load_steps=8 format=3 uid="uid://ctau8qx32ju8q"]
+
+[ext_resource type="Script" path="res://scr/classes/level_data.gd" id="1_i7we8"]
+[ext_resource type="Texture2D" uid="uid://bla3prodcaov7" path="res://assets/sprites/environment/map_bits/mapbit_000.png" id="1_sv7om"]
+[ext_resource type="Script" path="res://scr/classes/wave_data.gd" id="2_752n4"]
+[ext_resource type="Script" path="res://scr/classes/horde_data.gd" id="3_x7m6j"]
+[ext_resource type="PackedScene" uid="uid://cg5cjwamygmk" path="res://scenes/monsters/basic_zombie/basic_zombie.tscn" id="4_vxabw"]
+
+[sub_resource type="Resource" id="Resource_h0fv6"]
+script = ExtResource("3_x7m6j")
+zombie_per_lane = {
+-1: [0],
+0: [],
+1: [],
+2: [],
+3: [],
+4: []
+}
+
+[sub_resource type="Resource" id="Resource_w44cq"]
+script = ExtResource("2_752n4")
+zombie_types = Array[PackedScene]([ExtResource("4_vxabw")])
+hordes = Array[ExtResource("3_x7m6j")]([SubResource("Resource_h0fv6")])
+spawn_rate = 12.0
+zombie_points = 0
+wave_duration = 42.0
+
+[resource]
+script = ExtResource("1_i7we8")
+map = ExtResource("1_sv7om")
+waves = Array[ExtResource("2_752n4")]([SubResource("Resource_w44cq")])
+sun_falls = true
+starting_sun = 50
+sun_amount = 25
+first_sun = 3.5
+sun_cooldown = 8.5
+sun_delay_range = 0.35

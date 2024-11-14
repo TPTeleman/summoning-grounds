@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://jygue3idyntd"]
+
+[ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_pvub5"]
+[ext_resource type="Script" path="res://scenes/summons/bodies/seed_shooter/seed_shooter_body.gd" id="2_q746u"]
+[ext_resource type="Texture2D" uid="uid://04oo36xgspbh" path="res://assets/sprites/summons/seed_slinger/seed_slinger_idle.png" id="3_om601"]
+[ext_resource type="Script" path="res://scr/modules/shooting_node/shooting_node.gd" id="4_v40th"]
+[ext_resource type="PackedScene" uid="uid://cb68p1j0jx5vu" path="res://scenes/projectiles/seed_projectile/seed_projectile.tscn" id="5_wgne8"]
+[ext_resource type="Script" path="res://scr/modules/lane_detector_node/lane_detector_node.gd" id="6_d8cxb"]
+
+[node name="Summon_Body" node_paths=PackedStringArray("shooting_node", "lane_node") instance=ExtResource("1_pvub5")]
+script = ExtResource("2_q746u")
+shooting_node = NodePath("Modules/Shooting_Node")
+lane_node = NodePath("Modules/Lane_Detector_Node")
+
+[node name="Sprite" parent="Sprites" index="0"]
+texture = ExtResource("3_om601")
+
+[node name="Shooting_Node" type="Node" parent="Modules" index="2" node_paths=PackedStringArray("individual", "shoot_pos")]
+script = ExtResource("4_v40th")
+individual = NodePath("../..")
+shoot_pos = NodePath("../../Shoot_Pos")
+projectile = ExtResource("5_wgne8")
+attack_cooldown = 4.2
+attack_variation = 0.185
+projectile_amount = 2
+projectile_delay = 0.175
+
+[node name="Lane_Detector_Node" type="Node" parent="Modules" index="3" node_paths=PackedStringArray("individual")]
+script = ExtResource("6_d8cxb")
+individual = NodePath("../..")
+lane_range = 960.0
+
+[node name="Shoot_Pos" type="Marker2D" parent="." index="5"]
+position = Vector2(19, -29)

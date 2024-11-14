@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfvuvgvm7nw3w"]
+
+[ext_resource type="Texture2D" uid="uid://dppoq1jl2u1t1" path="res://assets/sprites/particles/sun_full.png" id="1_vg2bt"]
+[ext_resource type="Script" path="res://scenes/world/sun_area/temp_sun.gd" id="1_yntq2"]
+
+[node name="Temp_Sun" type="Node2D"]
+script = ExtResource("1_yntq2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_vg2bt")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

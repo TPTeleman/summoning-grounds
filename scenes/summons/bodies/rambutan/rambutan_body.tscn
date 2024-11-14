@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://lbvlq42oi4eq"]
+
+[ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_da5oy"]
+[ext_resource type="Script" path="res://scenes/summons/bodies/rambutan/rambutan_body.gd" id="2_26ql4"]
+[ext_resource type="Texture2D" uid="uid://bsc8uxexj5d8t" path="res://assets/sprites/summons/rambutan/rambutan_state_0_idle.png" id="3_xbtyl"]
+[ext_resource type="Script" path="res://scr/modules/detection_node/detection_node.gd" id="4_ntdj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsq42"]
+size = Vector2(56, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcl2k"]
+size = Vector2(96, 96)
+
+[node name="Summon_Body" node_paths=PackedStringArray("knockback_area") instance=ExtResource("1_da5oy")]
+script = ExtResource("2_26ql4")
+knockback_area = NodePath("Modules/Knockback_Area")
+
+[node name="Sprite" parent="Sprites" index="0"]
+position = Vector2(-5, -16)
+texture = ExtResource("3_xbtyl")
+
+[node name="Health_Node" parent="Modules" index="0"]
+max_health = 750
+
+[node name="Collision_Shape" parent="Modules/Hitbox_Node" index="0"]
+shape = SubResource("RectangleShape2D_jsq42")
+
+[node name="Knockback_Area" type="Area2D" parent="Modules" index="2" node_paths=PackedStringArray("individual")]
+position = Vector2(0, -16)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("4_ntdj2")
+individual = NodePath("../..")
+
+[node name="Collision_Shape" type="CollisionShape2D" parent="Modules/Knockback_Area" index="0"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_tcl2k")
+debug_color = Color(0.88, 0.2552, 0.66132, 0.0509804)

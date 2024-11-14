@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://jxyifyy5cbyi"]
+
+[ext_resource type="Texture2D" uid="uid://g23omxdid0h8" path="res://assets/sprites/particles/sun_ring.png" id="1_nha1t"]
+[ext_resource type="Script" path="res://scenes/world/sun_area/sun_area.gd" id="1_wqqpv"]
+[ext_resource type="Texture2D" uid="uid://b8jeunqduuh5r" path="res://assets/sprites/particles/sun_ball.png" id="2_quvtk"]
+
+[node name="Sun_Area" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_wqqpv")
+
+[node name="Collision_Shape" type="CollisionShape2D" parent="."]
+
+[node name="Sprite_Cluster" type="Node2D" parent="."]
+
+[node name="Sun_Ring" type="Sprite2D" parent="Sprite_Cluster"]
+texture = ExtResource("1_nha1t")
+
+[node name="Sun_Center" type="Sprite2D" parent="Sprite_Cluster"]
+texture = ExtResource("2_quvtk")

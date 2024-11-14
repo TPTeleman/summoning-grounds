@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb68p1j0jx5vu"]
+
+[ext_resource type="PackedScene" uid="uid://x0fvxvb64nyr" path="res://scenes/projectiles/straight_projectile.tscn" id="1_f8deq"]
+[ext_resource type="Texture2D" uid="uid://bnm86ub6dad1g" path="res://assets/sprites/particles/seed_shot.png" id="2_bjg8j"]
+
+[node name="Seed_Projectile" instance=ExtResource("1_f8deq")]
+projectile_speed = 280.0
+parent_group = "Summon"
+
+[node name="Sprite" parent="Sprites" index="0"]
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("2_bjg8j")
+
+[node name="Detection_Node" parent="." index="2"]
+collision_mask = 8

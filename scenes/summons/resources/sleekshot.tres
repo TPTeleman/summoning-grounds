@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://cst4bycrlp46v"]
+
+[ext_resource type="Script" path="res://scenes/summons/summon_res.gd" id="1_negm4"]
+[ext_resource type="PackedScene" uid="uid://bqwqffils0fmx" path="res://scenes/summons/bodies/sleekshot/sleekshot_body.tscn" id="2_bue5b"]
+
+[resource]
+script = ExtResource("1_negm4")
+id = 12
+summon_body = ExtResource("2_bue5b")
+summon_cost = 275
+starting_charge = 7.5
+summon_cooldown = 7.5
+is_upgrade = false
+placement_tags = Array[String](["takes_space"])
+summon_cell = ""
+cell_type = Array[String](["dirt", "water"])

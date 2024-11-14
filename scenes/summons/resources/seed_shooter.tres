@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://sisbhin5pxmd"]
+
+[ext_resource type="Script" path="res://scenes/summons/summon_res.gd" id="1_ctjp4"]
+[ext_resource type="PackedScene" uid="uid://b3wy1iip8usxc" path="res://scenes/summons/bodies/seed_shooter/seed_shooter_body.tscn" id="2_oxiw6"]
+
+[resource]
+script = ExtResource("1_ctjp4")
+id = 1
+summon_body = ExtResource("2_oxiw6")
+summon_cost = 125
+starting_charge = 7.5
+summon_cooldown = 7.5
+is_upgrade = false
+placement_tags = Array[String](["takes_space"])
+summon_cell = ""
+cell_type = Array[String](["dirt"])

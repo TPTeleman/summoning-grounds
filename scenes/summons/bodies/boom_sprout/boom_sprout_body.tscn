@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://bws5jw8ed10a2"]
+
+[ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_ixpbx"]
+[ext_resource type="Texture2D" uid="uid://dc00111oixcwj" path="res://assets/sprites/summons/boom_sprout/boom_sprout_state_1_idle.png" id="2_4x8rn"]
+[ext_resource type="Script" path="res://scenes/summons/bodies/boom_sprout/boom_sprout_body.gd" id="2_7rvol"]
+[ext_resource type="Script" path="res://scr/modules/detection_node/detection_node.gd" id="4_43vdd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgx8s"]
+size = Vector2(52, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87ngo"]
+size = Vector2(96, 64)
+
+[node name="Summon_Body" node_paths=PackedStringArray("detection_node", "explosion_area") instance=ExtResource("1_ixpbx")]
+script = ExtResource("2_7rvol")
+detection_node = NodePath("Modules/Detection_Node")
+explosion_area = NodePath("Modules/Explosion_Area")
+damage = 900
+arming_delay = 12.0
+detonating_delay = 0.35
+
+[node name="Sprite" parent="Sprites" index="0"]
+texture = ExtResource("2_4x8rn")
+
+[node name="Health_Node" parent="Modules" index="0"]
+max_health = 25
+
+[node name="Detection_Node" type="Area2D" parent="Modules" index="2" node_paths=PackedStringArray("individual")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("4_43vdd")
+individual = NodePath("../..")
+
+[node name="Collision_Shape" type="CollisionShape2D" parent="Modules/Detection_Node" index="0"]
+shape = SubResource("RectangleShape2D_sgx8s")
+disabled = true
+debug_color = Color(0.53636, 0.2552, 0.88, 0.419608)
+
+[node name="Explosion_Area" type="Area2D" parent="Modules" index="3" node_paths=PackedStringArray("individual")]
+position = Vector2(0, -16)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("4_43vdd")
+individual = NodePath("../..")
+
+[node name="Collision_Shape" type="CollisionShape2D" parent="Modules/Explosion_Area" index="0"]
+shape = SubResource("RectangleShape2D_87ngo")
+debug_color = Color(0.88, 0.2552, 0.66132, 0.0509804)
+
+[node name="Arming_Timer" type="Timer" parent="." index="5"]
+one_shot = true
+
+[node name="Detonating_Timer" type="Timer" parent="." index="6"]
+one_shot = true
+
+[connection signal="area_entered" from="Modules/Detection_Node" to="." method="_on_detection_node_area_entered"]
+[connection signal="timeout" from="Arming_Timer" to="." method="_on_arming_timer_timeout"]
+[connection signal="timeout" from="Detonating_Timer" to="." method="_on_detonating_timer_timeout"]

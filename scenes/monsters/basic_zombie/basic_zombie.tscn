@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg5cjwamygmk"]
+
+[ext_resource type="PackedScene" uid="uid://b1fxtl1vyr1qw" path="res://scenes/monsters/monster_body.tscn" id="1_4kjkg"]
+[ext_resource type="Texture2D" uid="uid://bdfk7o7wd6y7u" path="res://assets/sprites/enemies/basic_zombie/basic_zombie_0.png" id="2_he6yv"]
+[ext_resource type="Texture2D" uid="uid://dexwtdmy47iuu" path="res://assets/sprites/enemies/basic_zombie/basic_zombie_1.png" id="2_sn87a"]
+
+[node name="Monster_Body" instance=ExtResource("1_4kjkg")]
+damaged_texture = ExtResource("2_sn87a")
+
+[node name="Sprite" parent="Sprites" index="0"]
+texture = ExtResource("2_he6yv")
+
+[node name="Health_Node" parent="Modules" index="0"]
+max_health = 200
+
+[node name="Hitbox_Node" parent="Modules" index="1"]
+collision_layer = 8
+collision_mask = 0
