@@ -1,5 +1,6 @@
 class_name GUI extends CanvasLayer
 
+signal exit_click
 signal card_clicked(id)
 signal shovel_clicked
 
@@ -25,7 +26,12 @@ func _input(event):
 				pause_game()
 			else:
 				resume_game()
+		keybind_input(event)
 			
+
+func show_card_select() -> void:
+	select_container.show()
+	start_button.show()
 
 
 func create_summon_select():
@@ -41,6 +47,7 @@ func create_summon_select():
 		new_card.face_rect.texture = load("res://assets/sprites/summon cards/summon faces/"+sum+"_face.png")
 		new_card.update_price(sum_res.summon_cost)
 		new_card.on_click.connect(on_card_selected)
+	show_card_select()
 	show()
 	#for i in 3:
 		#System.summon_array.append(load("res://scenes/summons/resources/"+System.available_summons[10]+".tres"))
@@ -140,7 +147,65 @@ func on_sun_change():
 		
 		card.update_purchase(System.sun_count, summon.summon_cost)
 
+#region Card Keybinds
 
+func keybind_input(event) -> void:
+	if event.pressed:
+		match event.keycode:
+			KEY_Q:
+				shovel_clicked.emit()
+			KEY_1:
+				var number = 1
+				if summon_container.get_child_count() >= number:
+					var card = summon_container.get_child(number-1) as SUMMON_CARD
+					card.on_click.emit(card)
+			KEY_2:
+				var number = 2
+				if summon_container.get_child_count() >= number:
+					var card = summon_container.get_child(number-1) as SUMMON_CARD
+					card.on_click.emit(card)
+			KEY_3:
+				var number = 3
+				if summon_container.get_child_count() >= number:
+					var card = summon_container.get_child(number-1) as SUMMON_CARD
+					card.on_click.emit(card)
+			KEY_4:
+				var number = 4
+				if summon_container.get_child_count() >= number:
+					var card = summon_container.get_child(number-1) as SUMMON_CARD
+					card.on_click.emit(card)
+			KEY_5:
+				var number = 5
+				if summon_container.get_child_count() >= number:
+					var card = summon_container.get_child(number-1) as SUMMON_CARD
+					card.on_click.emit(card)
+			KEY_6:
+				var number = 6
+				if summon_container.get_child_count() >= number:
+					var card = summon_container.get_child(number-1) as SUMMON_CARD
+					card.on_click.emit(card)
+			KEY_7:
+				var number = 7
+				if summon_container.get_child_count() >= number:
+					var card = summon_container.get_child(number-1) as SUMMON_CARD
+					card.on_click.emit(card)
+			KEY_8:
+				var number = 8
+				if summon_container.get_child_count() >= number:
+					var card = summon_container.get_child(number-1) as SUMMON_CARD
+					card.on_click.emit(card)
+			KEY_9:
+				var number = 9
+				if summon_container.get_child_count() >= number:
+					var card = summon_container.get_child(number-1) as SUMMON_CARD
+					card.on_click.emit(card)
+			KEY_0:
+				var number = 10
+				if summon_container.get_child_count() >= number:
+					var card = summon_container.get_child(number-1) as SUMMON_CARD
+					card.on_click.emit(card)
+
+#endregion
 #region Pause Menu
 
 @onready var pause_menu: Control = $Pause_Menu
@@ -160,6 +225,14 @@ func _on_resume_button_button_down() -> void:
 
 
 func _on_quit_button_button_down() -> void:
-	pass # Replace with function body.
+	hide()
 
-#
+	for each in summon_container.get_children():
+		each.queue_free()
+	for each in card_container.get_children():
+		each.queue_free()
+
+	resume_game()
+	exit_click.emit()
+
+#endregion

@@ -661,6 +661,7 @@ text = "Exit Level"
 [connection signal="timeout" from="First_Sun" to="." method="_on_first_sun_timeout"]
 [connection signal="timeout" from="Sun_Timer" to="." method="_on_sun_timer_timeout"]
 [connection signal="card_clicked" from="GUI" to="." method="_on_gui_card_clicked"]
+[connection signal="exit_click" from="GUI" to="." method="_on_gui_exit_click"]
 [connection signal="shovel_clicked" from="GUI" to="." method="_on_gui_shovel_clicked"]
 [connection signal="gui_input" from="GUI/Control/MarginContainer/CenterContainer/HBoxContainer2/Placeholder" to="GUI" method="_on_placeholder_gui_input"]
 [connection signal="button_down" from="GUI/Control/Start_Button" to="." method="_on_start_button_button_down"]

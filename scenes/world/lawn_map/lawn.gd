@@ -1,5 +1,7 @@
 class_name LAWN extends Node2D
 
+signal left_level
+
 const SUN_BODY = preload("res://scenes/world/sun_area/sun_area.tscn")
 const PLACED_PARTICLE = {
 	"dirt": preload("res://scenes/particle_effects/placed_summon/placed_summon_dirt.tscn"),
@@ -32,6 +34,7 @@ var level_data: LEVEL_DATA = null
 
 @onready var checker = $Map/Checker
 @onready var map: Node2D = $Map
+
 @onready var objects = $Objects
 @onready var summons_node: Node2D = $Summons
 @onready var enemies_node: Node2D = $Enemies
@@ -121,6 +124,44 @@ func start_level():
 	#for i in 5:
 		#spawn_monster(Vector2(11, i), load("res://scenes/monsters/basic_zombie/basic_zombie.tscn"))
 	#spawn_monster(Vector2(11, 3), load("res://scenes/monsters/bucket_zombie/bucket_zombie.tscn"))
+
+
+func exit_level() -> void:
+	level_started = false
+	wave_manager.set_process(false)
+	wave_manager.reset()
+
+	checker.position = Vector2(-48, -48)
+
+	level_data = null
+	selected_summon = null
+	summon_body = null
+	shovel_held = false
+	shovel_sprite.hide()
+
+	System.summon_array.clear()
+	grid.clear()
+	default_grid.clear()
+	slanted_grid.clear()
+
+	sun_timer.stop()
+	first_sun.stop()
+
+	left_level.emit()
+
+
+func clear_entities() -> void:
+	for each in objects.get_children():
+		each.queue_free()
+	for each in summons_node.get_children():
+		each.queue_free()
+	for each in enemies_node.get_children():
+		each.queue_free()
+
+
+func _on_gui_exit_click() -> void:
+	exit_level()
+	clear_entities()
 
 #region Grid Region
 
@@ -416,7 +457,13 @@ func card_used(summon: SUMMON_RES):
 
 
 func _on_gui_shovel_clicked():
-	shovel_held = true
+	if !level_started:
+		return
+	
+	if shovel_held == false:
+		shovel_held = true
+	else:
+		shovel_held = false
 	free_select()
 
 #endregion

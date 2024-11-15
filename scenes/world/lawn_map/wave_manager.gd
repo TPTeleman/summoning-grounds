@@ -21,6 +21,19 @@ func _ready() -> void:
 	set_process(false)
 
 
+func reset() -> void:
+	current_flag = 0
+	wave_index = -1
+	horde_index = -1
+
+	spawn_rate = 0.0
+	spawn_timer = 99.0
+	wave_duration = 0.0
+	wave_timer = 0.0
+
+	level_data = null
+
+
 func call_next_wave():
 	if wave_index % 5 == 0:
 		advance_flag()

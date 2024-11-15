@@ -12,4 +12,5 @@ script = ExtResource("1_u34hk")
 [node name="Main_Menu" parent="." instance=ExtResource("2_kikt3")]
 mouse_filter = 2
 
+[connection signal="left_level" from="Lawn" to="." method="_on_lawn_left_level"]
 [connection signal="play_pressed" from="Main_Menu" to="." method="_on_main_menu_play_pressed"]
