@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1fxtl1vyr1qw"]
+[gd_scene load_steps=12 format=3 uid="uid://b1fxtl1vyr1qw"]
 
 [ext_resource type="Script" path="res://scenes/monsters/monster_body.gd" id="1_xt35c"]
+[ext_resource type="Texture2D" uid="uid://0wvksud1r2k5" path="res://assets/sprites/particles/White_Box_Half.png" id="2_jf7ig"]
 [ext_resource type="Texture2D" uid="uid://b2504r27vref6" path="res://assets/sprites/enemies/naked_zombie/naked_zombie.png" id="2_jnj11"]
 [ext_resource type="Script" path="res://scr/modules/health_node/health_node.gd" id="3_fxe7g"]
 [ext_resource type="Script" path="res://scr/modules/hitbox_node/hitbox_node.gd" id="4_15x0k"]
@@ -35,9 +36,14 @@ debug_color = Color(0.23793, 0.618422, 0.440188, 0.42)
 [node name="Sprites" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Sprite" type="Sprite2D" parent="Sprites"]
-position = Vector2(-9, -20)
-scale = Vector2(1.5, 1.5)
+[node name="Water_Clip" type="Sprite2D" parent="Sprites"]
+position = Vector2(-9, -27)
+scale = Vector2(0.164063, 0.21875)
+texture = ExtResource("2_jf7ig")
+
+[node name="Sprite" type="Sprite2D" parent="Sprites/Water_Clip"]
+position = Vector2(0, 32)
+scale = Vector2(9.14286, 6.85714)
 texture = ExtResource("2_jnj11")
 
 [node name="Modules" type="Node2D" parent="."]

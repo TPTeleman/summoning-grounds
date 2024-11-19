@@ -19,7 +19,12 @@ damage = 900
 arming_delay = 12.0
 detonating_delay = 0.35
 
+[node name="Sprites" parent="." index="1"]
+position = Vector2(0, 12)
+
 [node name="Sprite" parent="Sprites" index="0"]
+position = Vector2(0, -40)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_4x8rn")
 
 [node name="Health_Node" parent="Modules" index="0"]

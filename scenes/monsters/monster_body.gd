@@ -28,10 +28,11 @@ var target: SUMMON_BODY = null
 var is_attacking: bool = false
 
 @onready var sprites: Node2D = $Sprites
-@onready var sprite: Sprite2D = $Sprites/Sprite
-
+@onready var sprite: Sprite2D = $Sprites/Water_Clip/Sprite
+@onready var water_clip: Sprite2D = $Sprites/Water_Clip
 
 func _ready():
+	water_clip.self_modulate = Color(255, 255, 255, 0)
 	attack_timer = attack_cooldown
 
 
@@ -44,6 +45,16 @@ func _process(delta):
 		#print("Updated!")
 		cell = new_cell
 	
+	var cell_type = lawn.get_cell_type(cell)
+	if cell_type != "water":
+		sprites.position = Vector2.ZERO
+		water_clip.clip_children = CanvasItem.CLIP_CHILDREN_DISABLED
+		water_clip.self_modulate = Color(255, 255, 255, 0)
+	else:
+		sprites.position = Vector2(0, 6)
+		water_clip.clip_children = CanvasItem.CLIP_CHILDREN_ONLY
+		water_clip.self_modulate = Color(255, 255, 255, 255)
+
 	if is_attacking:
 		if attack_timer > 0:
 			attack_timer -= delta * (1 + effect_node.get_effect_value("ice_slow") + effect_node.get_effect_value("eat_speed"))

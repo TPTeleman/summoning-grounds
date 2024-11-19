@@ -13,4 +13,4 @@ summon_cooldown = 16.0
 is_upgrade = false
 placement_tags = Array[String](["takes_space"])
 summon_cell = ""
-cell_type = Array[String](["dirt"])
+cell_type = Array[String](["dirt", "water"])

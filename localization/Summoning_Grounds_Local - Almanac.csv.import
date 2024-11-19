@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bn5qwcp5mkk00"
+
+[deps]
+
+files=["res://localization/Summoning_Grounds_Local - Almanac.en.translation", "res://localization/Summoning_Grounds_Local - Almanac.pt.translation"]
+
+source_file="res://localization/Summoning_Grounds_Local - Almanac.csv"
+dest_files=["res://localization/Summoning_Grounds_Local - Almanac.en.translation", "res://localization/Summoning_Grounds_Local - Almanac.pt.translation"]
+
+[params]
+
+compress=true
+delimiter=0

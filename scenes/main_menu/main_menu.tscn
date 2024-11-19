@@ -22,7 +22,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -38,7 +37,7 @@ label_settings = SubResource("LabelSettings_xc3kn")
 horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(180, 160)
+custom_minimum_size = Vector2(196, 212)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer/Panel"]
@@ -65,10 +64,16 @@ text = "Play"
 layout_mode = 2
 text = "Options"
 
+[node name="Almanac_Button" type="Button" parent="CenterContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Almanac
+"
+
 [node name="Quit_Button" type="Button" parent="CenterContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
 [connection signal="button_down" from="CenterContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/Play_Button" to="." method="_on_play_button_button_down"]
 [connection signal="button_down" from="CenterContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/Options_Button" to="." method="_on_options_button_button_down"]
+[connection signal="button_down" from="CenterContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/Almanac_Button" to="." method="_on_almanac_button_button_down"]
 [connection signal="button_down" from="CenterContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/Quit_Button" to="." method="_on_quit_button_button_down"]

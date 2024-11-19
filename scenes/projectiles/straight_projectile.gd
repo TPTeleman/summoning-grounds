@@ -1,6 +1,6 @@
 class_name STRAIGHT_PROJECTILE extends CharacterBody2D
 
-signal _hit_enemy(enemy)
+signal hit_enemy(enemy)
 
 @export var projectile_speed: float = 240
 @export var pierces: int = 1
@@ -33,5 +33,5 @@ func _on_detection_node_area_entered(area):
 
 func on_hit_target(enemy: CharacterBody2D):
 	enemy.on_damage_taken(damage)
-	_hit_enemy.emit(enemy)
+	hit_enemy.emit(enemy)
 	pierces -= 1

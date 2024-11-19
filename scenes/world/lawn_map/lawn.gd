@@ -1,5 +1,6 @@
 class_name LAWN extends Node2D
 
+signal almanac_pressed
 signal left_level
 
 const SUN_BODY = preload("res://scenes/world/sun_area/sun_area.tscn")
@@ -31,6 +32,8 @@ var summon_body: SUMMON_BODY = null
 var shovel_held: bool = false
 
 var level_data: LEVEL_DATA = null
+
+var on_almanac: bool = false
 
 @onready var checker = $Map/Checker
 @onready var map: Node2D = $Map
@@ -76,6 +79,7 @@ func _process(delta):
 func _input(event: InputEvent):
 	if !level_started:
 		return
+	
 	if event.is_action_pressed("left_click"):
 		if shovel_held:
 			shovel_held = false
@@ -465,6 +469,10 @@ func _on_gui_shovel_clicked():
 	else:
 		shovel_held = false
 	free_select()
+
+
+func _on_almanac_button_button_down() -> void:
+	almanac_pressed.emit()
 
 #endregion
 #region Grid Functions

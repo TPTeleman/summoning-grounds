@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c7jqmv5ebuct" path="res://assets/sprites/environment/default_checker.png" id="5_grj22"]
 [ext_resource type="Script" path="res://scenes/world/lawn_map/wave_manager.gd" id="5_ilqr2"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k1juq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04jvb"]
 texture = ExtResource("1_yq8x4")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
@@ -337,7 +337,7 @@ texture_region_size = Vector2i(48, 48)
 8:4/0/terrains_peering_bit/left_side = 0
 8:4/0/terrains_peering_bit/top_side = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mw5xd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ew3l"]
 texture = ExtResource("2_ylyc8")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
@@ -354,8 +354,8 @@ tile_size = Vector2i(48, 48)
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_k1juq")
-sources/1 = SubResource("TileSetAtlasSource_mw5xd")
+sources/0 = SubResource("TileSetAtlasSource_04jvb")
+sources/1 = SubResource("TileSetAtlasSource_8ew3l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7lfr"]
 texture = ExtResource("2_ylyc8")
@@ -577,6 +577,14 @@ offset_right = 600.0
 offset_bottom = 432.0
 text = "Start"
 
+[node name="Almanac_Button" type="Button" parent="GUI/Control"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 344.0
+offset_right = 600.0
+offset_bottom = 384.0
+text = "Almanac"
+
 [node name="Pause_Menu" type="Control" parent="GUI"]
 process_mode = 2
 layout_mode = 3
@@ -665,5 +673,6 @@ text = "Exit Level"
 [connection signal="shovel_clicked" from="GUI" to="." method="_on_gui_shovel_clicked"]
 [connection signal="gui_input" from="GUI/Control/MarginContainer/CenterContainer/HBoxContainer2/Placeholder" to="GUI" method="_on_placeholder_gui_input"]
 [connection signal="button_down" from="GUI/Control/Start_Button" to="." method="_on_start_button_button_down"]
+[connection signal="button_down" from="GUI/Control/Almanac_Button" to="." method="_on_almanac_button_button_down"]
 [connection signal="button_down" from="GUI/Pause_Menu/CenterContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/Resume_Button" to="GUI" method="_on_resume_button_button_down"]
 [connection signal="button_down" from="GUI/Pause_Menu/CenterContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/Quit_Button" to="GUI" method="_on_quit_button_button_down"]

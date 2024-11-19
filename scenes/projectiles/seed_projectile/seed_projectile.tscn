@@ -8,7 +8,7 @@ projectile_speed = 280.0
 parent_group = "Summon"
 
 [node name="Sprite" parent="Sprites" index="0"]
-scale = Vector2(2.3, 2.3)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_bjg8j")
 
 [node name="Detection_Node" parent="." index="2"]

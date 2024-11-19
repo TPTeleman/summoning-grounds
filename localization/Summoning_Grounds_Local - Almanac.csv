@@ -1,0 +1,29 @@
+original,en,pt_br
+PLANT_NAME,,
+PLANT_DESC,,
+ILUMILILY_NAME,Ilumilily,Liríluz
+ILUMILILY_DESC,Produces sun to help defend your yard,Produz sol para ajudar a defender seu quintal
+SEED_SHOOTER_NAME,Seed Shooter,Atira-Sementes
+SEED_SHOOTER_DESC,Shoots seeds at zombies in its lane,Atira sementes em zumbis na sua linha
+BULKTATO_NAME,Bulktato,Brutata
+BULKTATO_DESC,Holds the line against zombies,Segura zumbis na sua linha
+BOOM_SPROUT_NAME,Boom Sprout,Broto-Bomba
+BOOM_SPROUT_DESC,"After a delay, explodes in an area when stepped on","Após armar, explode em uma área quando ativada por um zumbi"
+STRAWBERRY_LOBBER_NAME,Strawberry Lobber,Lança-Morangos
+STRAWBERRY_LOBBER_DESC,Lobs hard hitting strawberries at zombies in its lane,Arremessa morangos pesados em zumbis na sua linha
+SEED_SLINGER_NAME,Seed Slinger,Semeadora
+SEED_SLINGER_DESC,"Shoots two seeds at a time, but shoots slower","Atira duas sementes de uma vez, mas mais devagar"
+COLD_COTTON_NAME,Cold Cotton,Algodão Congelado
+COLD_COTTON_DESC,Shoots icy cottons to slow zombies in its lane,Atira algodões frios para deixar zumbis lentos
+GARDEN_BOX_NAME,Garden Box,Caixa de Jardim
+GARDEN_BOX_DESC,Plants can be planted on top of it,Plantas podem ser colocadas em cima dele
+LOTUS_PAD_NAME,Lotus Pad,Plataforma de Lotus
+LOTUS_PAD_DESC,Allows plants to be planted on water,Permite plantas a serem colocadas na água
+CASSAVA_ROOT_NAME,Cassava Root,Raíz de Mandioca
+CASSAVA_ROOT_DESC,An extra layer of defense to plant on top of other plants,Uma camada extra de proteção para colocar em cima de outras plantas
+ORAGE_NAME,Orage,Iranja
+ORAGE_DESC,Explodes causing massive damage in an area,Explode causando dano massivo em uma área
+RAMBUTAN_NAME,Rambutan,Rambutã
+RAMBUTAN_DESC,Holds the line against zombies and pushes them back,Segura zumbis na sua linha e os empurra
+SLEEKSHOT_NAME,Sleekshot,Alho-Estilingue
+SLEEKSHOT_DESC,"Slings leek heads at zombies in the lanes above, below and in its lane","Arremessa cabeças de alho em zumbis acima, embaixo e na sua linha"

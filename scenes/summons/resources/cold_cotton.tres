@@ -7,10 +7,10 @@
 script = ExtResource("1_ctjp4")
 id = 6
 summon_body = ExtResource("2_q3gf1")
-summon_cost = 175
-starting_charge = 18.0
-summon_cooldown = 18.0
+summon_cost = 150
+starting_charge = 14.0
+summon_cooldown = 14.0
 is_upgrade = false
 placement_tags = Array[String](["takes_space"])
 summon_cell = ""
-cell_type = "dirt"
+cell_type = Array[String](["dirt"])

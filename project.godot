@@ -65,6 +65,10 @@ Esc={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/Summoning_Grounds_Local - Almanac.en.translation", "res://localization/Summoning_Grounds_Local - Almanac.pt.translation")
+
 [layer_names]
 
 2d_physics/layer_1="Map"

@@ -94,7 +94,6 @@ debug_color = Color(0.23793, 0.618422, 0.440188, 0.42)
 
 [node name="Sprite" type="Sprite2D" parent="Sprites"]
 position = Vector2(1, -16)
-scale = Vector2(2, 2)
 
 [node name="Animation_Player" type="AnimationPlayer" parent="."]
 libraries = {

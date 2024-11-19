@@ -7,7 +7,7 @@
 [node name="Monster_Body" instance=ExtResource("1_4kjkg")]
 damaged_texture = ExtResource("2_sn87a")
 
-[node name="Sprite" parent="Sprites" index="0"]
+[node name="Sprite" parent="Sprites/Water_Clip" index="0"]
 texture = ExtResource("2_he6yv")
 
 [node name="Health_Node" parent="Modules" index="0"]

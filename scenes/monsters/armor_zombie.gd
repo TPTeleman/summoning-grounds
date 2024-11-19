@@ -4,7 +4,7 @@ extends MONSTER_BODY
 
 var armor_state: int = 0
 
-@onready var armor_sprite: Sprite2D = $Sprites/Sprite/Armor_Sprite
+@onready var armor_sprite: Sprite2D = $Sprites/Water_Clip/Sprite/Armor_Sprite
 
 
 func _on_health_node_damaged(value):

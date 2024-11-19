@@ -10,6 +10,8 @@ script = ExtResource("2_24b4l")
 sunmaker_node = NodePath("SunMaker_Node")
 
 [node name="Sprite" parent="Sprites" index="0"]
+position = Vector2(0, -28)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_fkfyd")
 
 [node name="SunMaker_Node" type="Node" parent="." index="3" node_paths=PackedStringArray("summon_body")]

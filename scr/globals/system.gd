@@ -6,7 +6,11 @@ var max_summons: int = 10
 var available_summons : Dictionary
 
 
-func dir_contents():
+func _ready() -> void:
+	dir_contents()
+
+
+func dir_contents() -> void:
 	var dir = DirAccess.open("res://scenes/summons/resources/")
 	if dir:
 		dir.list_dir_begin()

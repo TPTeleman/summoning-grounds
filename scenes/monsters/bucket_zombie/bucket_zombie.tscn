@@ -1,28 +1,98 @@
-[gd_scene load_steps=6 format=3 uid="uid://byt6sielbmukn"]
+[gd_scene load_steps=14 format=3 uid="uid://byt6sielbmukn"]
 
-[ext_resource type="PackedScene" uid="uid://b1fxtl1vyr1qw" path="res://scenes/monsters/monster_body.tscn" id="1_un28v"]
 [ext_resource type="Texture2D" uid="uid://dexwtdmy47iuu" path="res://assets/sprites/enemies/basic_zombie/basic_zombie_1.png" id="2_eh3np"]
 [ext_resource type="Script" path="res://scenes/monsters/armor_zombie.gd" id="2_hgf7p"]
 [ext_resource type="Texture2D" uid="uid://bdfk7o7wd6y7u" path="res://assets/sprites/enemies/basic_zombie/basic_zombie_0.png" id="3_6e70m"]
+[ext_resource type="Texture2D" uid="uid://0wvksud1r2k5" path="res://assets/sprites/particles/White_Box_Half.png" id="3_pnljy"]
 [ext_resource type="Texture2D" uid="uid://c21yi3on2ddbe" path="res://assets/sprites/enemies/armor_bucket/armor_bucket_0.png" id="4_yid1u"]
+[ext_resource type="Script" path="res://scr/modules/health_node/health_node.gd" id="6_12evs"]
+[ext_resource type="Script" path="res://scr/modules/hitbox_node/hitbox_node.gd" id="7_jnsak"]
+[ext_resource type="Script" path="res://scr/modules/velocity_node/velocity_node.gd" id="8_ibbto"]
+[ext_resource type="Script" path="res://scr/modules/detection_node/detection_node.gd" id="9_1a3jw"]
+[ext_resource type="Script" path="res://scr/modules/effect_node/effect_node.gd" id="10_1486p"]
 
-[node name="Monster_Body" instance=ExtResource("1_un28v")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lrqe"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihsoi"]
+size = Vector2(26, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t08h4"]
+size = Vector2(42, 24)
+
+[node name="Monster_Body" type="CharacterBody2D" node_paths=PackedStringArray("health_node", "hitbox_node", "velocity_node", "detection_node", "effect_node") groups=["Monster"]]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
 script = ExtResource("2_hgf7p")
 armor_type = "bucket"
+health_node = NodePath("Modules/Health_Node")
+hitbox_node = NodePath("Modules/Hitbox_Node")
+velocity_node = NodePath("Modules/Velocity_Node")
+detection_node = NodePath("Modules/Detection_Node")
+effect_node = NodePath("Modules/Effect_Node")
 spawn_cost = 4
 damaged_texture = ExtResource("2_eh3np")
 
-[node name="Sprite" parent="Sprites" index="0"]
+[node name="Collision_Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4lrqe")
+debug_color = Color(0.23793, 0.618422, 0.440188, 0.42)
+
+[node name="Sprites" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Water_Clip" type="Sprite2D" parent="Sprites"]
+position = Vector2(-10, -34.5)
+scale = Vector2(0.171875, 0.269531)
+texture = ExtResource("3_pnljy")
+
+[node name="Sprite" type="Sprite2D" parent="Sprites/Water_Clip"]
+position = Vector2(5.81818, 53.7971)
+scale = Vector2(8.72727, 5.56522)
 texture = ExtResource("3_6e70m")
 
-[node name="Armor_Sprite" type="Sprite2D" parent="Sprites/Sprite" index="0"]
-position = Vector2(-2.5, -18)
+[node name="Armor_Sprite" type="Sprite2D" parent="Sprites/Water_Clip/Sprite"]
+position = Vector2(-2, -17.3333)
 texture = ExtResource("4_yid1u")
 
-[node name="Health_Node" parent="Modules" index="0"]
+[node name="Modules" type="Node2D" parent="."]
+
+[node name="Health_Node" type="Node" parent="Modules"]
+script = ExtResource("6_12evs")
 max_health = 200
 max_armor = 1300
 
-[node name="Hitbox_Node" parent="Modules" index="1"]
+[node name="Hitbox_Node" type="Area2D" parent="Modules" node_paths=PackedStringArray("body")]
+position = Vector2(-5, -16)
 collision_layer = 8
 collision_mask = 0
+script = ExtResource("7_jnsak")
+body = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="Collision_Shape" type="CollisionShape2D" parent="Modules/Hitbox_Node"]
+shape = SubResource("RectangleShape2D_ihsoi")
+debug_color = Color(0.88, 0.2552, 0.2552, 0.419608)
+
+[node name="Velocity_Node" type="Node" parent="Modules" node_paths=PackedStringArray("individual")]
+script = ExtResource("8_ibbto")
+individual = NodePath("../..")
+
+[node name="Detection_Node" type="Area2D" parent="Modules" node_paths=PackedStringArray("individual")]
+position = Vector2(-5, 0)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("9_1a3jw")
+individual = NodePath("../..")
+
+[node name="Collision_Shape" type="CollisionShape2D" parent="Modules/Detection_Node"]
+shape = SubResource("RectangleShape2D_t08h4")
+debug_color = Color(0.530307, 0.2356, 0.62, 0.419608)
+
+[node name="Effect_Node" type="Node2D" parent="Modules" node_paths=PackedStringArray("individual")]
+script = ExtResource("10_1486p")
+individual = NodePath("../..")
+
+[connection signal="damaged" from="Modules/Health_Node" to="." method="_on_health_node_damaged"]
+[connection signal="died" from="Modules/Health_Node" to="." method="_on_health_node_died"]
+[connection signal="healed" from="Modules/Health_Node" to="." method="_on_health_node_healed"]

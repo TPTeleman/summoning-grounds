@@ -10,7 +10,10 @@ const SUMMON_CARD_NODE = preload("res://scenes/ui/gui/summon_card/summon_card.ts
 @onready var sun_lbl: Label = $Control/MarginContainer/CenterContainer/HBoxContainer2/HBoxContainer2/Sun_Lbl
 @onready var summon_container: GridContainer = $Control/MarginContainer/CenterContainer/HBoxContainer2/HBoxContainer
 @onready var select_container = $Control/CenterContainer
+
 @onready var start_button = $Control/Start_Button
+@onready var almanac_button: Button = $Control/Almanac_Button
+
 @onready var sun_rect = $Control/MarginContainer/CenterContainer/HBoxContainer2/HBoxContainer2/Sun_Rect
 
 
@@ -20,6 +23,9 @@ func _ready() -> void:
 
 
 func _input(event):
+	if get_parent().level_data == null or get_parent().on_almanac:
+		return
+
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			if get_tree().paused == false:
@@ -32,10 +38,10 @@ func _input(event):
 func show_card_select() -> void:
 	select_container.show()
 	start_button.show()
+	almanac_button.show()
 
 
 func create_summon_select():
-	System.dir_contents()
 	for i in System.available_summons.size():
 		var sum = System.available_summons[i]
 		var sum_res = load("res://scenes/summons/resources/"+System.available_summons[i]+".tres") as SUMMON_RES
@@ -65,6 +71,8 @@ func summon_purchased():
 func level_started():
 	select_container.hide()
 	start_button.hide()
+	almanac_button.hide()
+	
 	for each in summon_container.get_children():
 		each.on_click.connect(on_card_clicked)
 
