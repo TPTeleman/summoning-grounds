@@ -434,6 +434,7 @@ polygon = PackedVector2Array(0, 0, 48, 0, 48, 48, 0, 48)
 
 [node name="Shovel_Sprite" type="Sprite2D" parent="Map"]
 visible = false
+z_as_relative = false
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_dn200")
 offset = Vector2(16, 16)

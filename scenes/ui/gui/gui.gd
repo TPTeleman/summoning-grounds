@@ -51,6 +51,8 @@ func create_summon_select():
 		new_card.id = i
 		new_card.summon_id = sum_res.id
 		new_card.face_rect.texture = load("res://assets/sprites/summon cards/summon faces/"+sum+"_face.png")
+		if System.cheat_cards:
+			sum_res.summon_cost = 0
 		new_card.update_price(sum_res.summon_cost)
 		new_card.on_click.connect(on_card_selected)
 	show_card_select()
@@ -83,7 +85,7 @@ func on_card_clicked(card):
 		if System.summon_array[i].id == card.summon_id:
 			sum_id = i
 	var summon = System.summon_array[sum_id] as SUMMON_RES
-	if summon.summon_recharge <= 0 and System.sun_count >= summon.summon_cost:
+	if summon.summon_recharge <= 0 and System.sun_count >= summon.summon_cost or System.cheat_cards:
 		deselect_all()
 		card.selection_rect.visible = true
 		card_clicked.emit(sum_id)
@@ -123,6 +125,8 @@ func card_added(id: int, sum_id: int):
 	new_card.id = id
 	new_card.summon_id = sum_id
 	new_card.face_rect.texture = load("res://assets/sprites/summon cards/summon faces/"+sum+"_face.png")
+	if System.cheat_cards:
+		sum_res.summon_cost = 0
 	new_card.update_price(sum_res.summon_cost)
 	#new_card.on_click.connect(on_card_selected)
 
@@ -143,7 +147,10 @@ func update_card_charge(index):
 	var summon = System.summon_array[index] as SUMMON_RES
 	var card = summon_container.get_child(index) as SUMMON_CARD
 	
-	card.update_recharge(summon.summon_recharge, summon.summon_cooldown)
+	if !System.cheat_cards:
+		card.update_recharge(summon.summon_recharge, summon.summon_cooldown)
+	else:
+		card.update_recharge(0, 1)
 
 
 func on_sun_change():

@@ -9,7 +9,7 @@ script = ExtResource("2_ii6p6")
 parent_group = "Summon"
 
 [node name="Sprite" parent="Sprites" index="0"]
-scale = Vector2(2, 2)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_vgfef")
 
 [node name="Detection_Node" parent="." index="2"]

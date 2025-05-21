@@ -469,6 +469,7 @@ func _on_gui_shovel_clicked():
 	else:
 		shovel_held = false
 	free_select()
+	gui.deselect_all()
 
 
 func _on_almanac_button_button_down() -> void:
@@ -560,6 +561,7 @@ func set_sun(value):
 
 
 func spend_sun(value):
+	#if !System.cheat_cards:
 	System.sun_count -= value
 	gui.on_sun_change()
 

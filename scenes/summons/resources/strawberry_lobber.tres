@@ -11,4 +11,6 @@ summon_cost = 150
 starting_charge = 7.5
 summon_cooldown = 7.5
 is_upgrade = false
-cell_type = "dirt"
+placement_tags = Array[String](["takes_space"])
+summon_cell = ""
+cell_type = Array[String](["dirt"])
