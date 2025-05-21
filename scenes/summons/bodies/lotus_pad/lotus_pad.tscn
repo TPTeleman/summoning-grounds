@@ -12,7 +12,7 @@ script = ExtResource("2_8iynm")
 
 [node name="Sprite" parent="Sprites" index="0"]
 position = Vector2(0, 0)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_qkydh")
 
 [node name="Animation_Player" parent="." index="2"]

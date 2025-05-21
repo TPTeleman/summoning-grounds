@@ -17,11 +17,11 @@ func _process(delta):
 
 func _on_hit_enemy(enemy: MONSTER_BODY) -> void:
 	last_enemy = enemy
-	#slow_enemies()
+	slow_enemies()
 	enemy.effect_node.apply_effect("", "ice_slow", -slow_strength, slow_duration)
 
 
 func slow_enemies():
 	for area in aoe_slow.entities_in_range:
-		if area.body != last_enemy:
-			area.body.effect_node.apply_effect("", "ice_slow", -slow_strength, slow_duration/2)
+		if area.body != last_enemy and area.body.cell.y == lane:
+			area.body.effect_node.apply_effect("", "ice_slow", -slow_strength, slow_duration/3)

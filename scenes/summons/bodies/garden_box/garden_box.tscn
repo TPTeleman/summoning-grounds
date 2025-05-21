@@ -12,7 +12,7 @@ script = ExtResource("2_qest5")
 
 [node name="Sprite" parent="Sprites" index="0"]
 position = Vector2(0, 0)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_uugpr")
 
 [node name="Animation_Player" parent="." index="2"]
@@ -22,4 +22,4 @@ speed_scale = 0.0
 shape = SubResource("RectangleShape2D_7beot")
 
 [node name="Summon_Pos" type="Marker2D" parent="." index="5"]
-position = Vector2(0, -12)
+position = Vector2(0, -4)

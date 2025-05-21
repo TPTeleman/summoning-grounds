@@ -13,7 +13,8 @@ shooting_node = NodePath("Modules/Shooting_Node")
 lane_node = NodePath("Modules/Lane_Detector_Node")
 
 [node name="Sprite" parent="Sprites" index="0"]
-position = Vector2(-1, -18)
+position = Vector2(-1, -28)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_suwcg")
 
 [node name="Shooting_Node" type="Node" parent="Modules" index="2" node_paths=PackedStringArray("individual", "shoot_pos")]
@@ -23,6 +24,7 @@ shoot_pos = NodePath("../../Shoot_Pos")
 projectile = ExtResource("5_jr65f")
 attack_cooldown = 4.4
 attack_variation = 0.185
+damage = 30
 
 [node name="Lane_Detector_Node" type="Node" parent="Modules" index="3" node_paths=PackedStringArray("individual")]
 script = ExtResource("6_cf857")

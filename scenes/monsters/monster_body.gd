@@ -31,6 +31,7 @@ var is_attacking: bool = false
 @onready var sprite: Sprite2D = $Sprites/Water_Clip/Sprite
 @onready var water_clip: Sprite2D = $Sprites/Water_Clip
 
+
 func _ready():
 	water_clip.self_modulate = Color(255, 255, 255, 0)
 	attack_timer = attack_cooldown
@@ -39,13 +40,13 @@ func _ready():
 func _process(delta):
 	velocity_node.on_process(delta)
 	is_attacking = !detection_node.entities_in_range.is_empty()
-	var new_cell = lawn.pos_to_cell(position)
+	var new_cell: Vector2 = lawn.pos_to_cell(position)
 	if new_cell != cell:
 		update_cell.emit(self, cell, new_cell)
 		#print("Updated!")
 		cell = new_cell
 	
-	var cell_type = lawn.get_cell_type(cell)
+	var cell_type: String = lawn.get_cell_type(cell)
 	if cell_type != "water":
 		sprites.position = Vector2.ZERO
 		water_clip.clip_children = CanvasItem.CLIP_CHILDREN_DISABLED

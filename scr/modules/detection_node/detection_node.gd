@@ -10,7 +10,7 @@ func _ready():
 	area_exited.connect(on_area_exited)
 
 
-func get_closest_entity():
+func get_closest_entity() -> SUMMON_BODY:
 	var target: CharacterBody2D = null
 	for summon in entities_in_range:
 		if !target or summon.body.position.distance_to(individual.position) < target.position.distance_to(individual.position):

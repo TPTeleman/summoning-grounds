@@ -46,9 +46,9 @@ parent_group = "Summon"
 
 [node name="Particles" type="GPUParticles2D" parent="Sprites" index="0"]
 amount = 12
-process_material = SubResource("ParticleProcessMaterial_yvsaq")
 texture = ExtResource("2_xsdxt")
 lifetime = 0.25
+process_material = SubResource("ParticleProcessMaterial_yvsaq")
 
 [node name="Sprite" parent="Sprites" index="1"]
 scale = Vector2(2.3, 2.3)
@@ -61,6 +61,8 @@ collision_mask = 8
 shape = SubResource("CircleShape2D_1cj0k")
 
 [node name="AoE_Slow" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 8
 script = ExtResource("5_87m2n")
 
 [node name="Collision_Shape" type="CollisionShape2D" parent="AoE_Slow" index="0"]
