@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://xinueaen881v"]
 
-[ext_resource type="Script" path="res://scenes/summons/bodies/summon_body.gd" id="1_pbdua"]
-[ext_resource type="Script" path="res://scr/modules/health_node/health_node.gd" id="2_r5tq7"]
-[ext_resource type="Script" path="res://scr/modules/hitbox_node/hitbox_node.gd" id="3_pgmhl"]
+[ext_resource type="Script" uid="uid://bsibqayvdp1va" path="res://scenes/summons/bodies/summon_body.gd" id="1_pbdua"]
+[ext_resource type="Script" uid="uid://b2qbfur0em30t" path="res://scr/modules/health_node/health_node.gd" id="2_r5tq7"]
+[ext_resource type="Script" uid="uid://dkmim27bj13ug" path="res://scr/modules/hitbox_node/hitbox_node.gd" id="3_pgmhl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6eqo"]
 size = Vector2(32, 32)
@@ -66,8 +66,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eo7jv"]
 _data = {
-"RESET": SubResource("Animation_ak2ym"),
-"idle": SubResource("Animation_31q1t")
+&"RESET": SubResource("Animation_ak2ym"),
+&"idle": SubResource("Animation_31q1t")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yi5l5"]

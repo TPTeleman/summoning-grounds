@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://5n7kapjletoc"]
 
-[ext_resource type="Script" path="res://scenes/summons/summon_res.gd" id="1_7dkj6"]
+[ext_resource type="Script" uid="uid://c40uoi7rkvxa" path="res://scenes/summons/summon_res.gd" id="1_7dkj6"]
 [ext_resource type="PackedScene" uid="uid://jygue3idyntd" path="res://scenes/summons/bodies/seed_slinger/seed_slinger_body.tscn" id="2_icgb5"]
 
 [resource]

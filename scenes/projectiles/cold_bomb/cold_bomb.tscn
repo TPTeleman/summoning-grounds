@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://x0fvxvb64nyr" path="res://scenes/projectiles/straight_projectile.tscn" id="1_6d1vy"]
 [ext_resource type="Texture2D" uid="uid://dvr7aj48bwl6x" path="res://assets/sprites/particles/cold_bomb.png" id="2_d1rmu"]
-[ext_resource type="Script" path="res://scenes/projectiles/cold_bomb/cold_bomb.gd" id="2_htv7g"]
+[ext_resource type="Script" uid="uid://bu8njow4i4ack" path="res://scenes/projectiles/cold_bomb/cold_bomb.gd" id="2_htv7g"]
 [ext_resource type="Texture2D" uid="uid://ceqva62us8p4i" path="res://assets/sprites/particles/White_Rhombus_Half.png" id="2_xsdxt"]
-[ext_resource type="Script" path="res://scr/modules/detection_node/detection_node.gd" id="5_87m2n"]
+[ext_resource type="Script" uid="uid://b61s5tqapx2uq" path="res://scr/modules/detection_node/detection_node.gd" id="5_87m2n"]
 
 [sub_resource type="Gradient" id="Gradient_ly5q0"]
 offsets = PackedFloat32Array(0.10989, 0.461538, 0.824176)

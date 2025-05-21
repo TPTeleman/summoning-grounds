@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ouu7t25dvdg3"]
 
 [ext_resource type="PackedScene" uid="uid://dn2g3v2rv1oux" path="res://scenes/projectiles/lobbed_projectile.tscn" id="1_48by2"]
-[ext_resource type="Script" path="res://scenes/projectiles/strawberry_projectile/strawberry_projectile.gd" id="2_ii6p6"]
+[ext_resource type="Script" uid="uid://brddy7ulq7c5w" path="res://scenes/projectiles/strawberry_projectile/strawberry_projectile.gd" id="2_ii6p6"]
 [ext_resource type="Texture2D" uid="uid://ciee3fo740hbg" path="res://assets/sprites/particles/strawberry_shot.png" id="3_vgfef"]
 
 [node name="Lobbed_Projectile" instance=ExtResource("1_48by2")]

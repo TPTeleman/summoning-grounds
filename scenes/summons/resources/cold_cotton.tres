@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://bhk4w6o3sciis"]
 
-[ext_resource type="Script" path="res://scenes/summons/summon_res.gd" id="1_ctjp4"]
+[ext_resource type="Script" uid="uid://c40uoi7rkvxa" path="res://scenes/summons/summon_res.gd" id="1_ctjp4"]
 [ext_resource type="PackedScene" uid="uid://xi6buubpwr5y" path="res://scenes/summons/bodies/cold_cotton/cold_cotton_body.tscn" id="2_q3gf1"]
 
 [resource]

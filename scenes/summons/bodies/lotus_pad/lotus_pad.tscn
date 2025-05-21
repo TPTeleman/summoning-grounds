@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwex0sxqalubk"]
 
 [ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_alaso"]
-[ext_resource type="Script" path="res://scenes/summons/bodies/lotus_pad/lotus_pad.gd" id="2_8iynm"]
+[ext_resource type="Script" uid="uid://bdlduh7qr5glb" path="res://scenes/summons/bodies/lotus_pad/lotus_pad.gd" id="2_8iynm"]
 [ext_resource type="Texture2D" uid="uid://bfdh8suv0qget" path="res://assets/sprites/summons/lotus_pad/lotus_pad_idle.png" id="3_qkydh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7beot"]

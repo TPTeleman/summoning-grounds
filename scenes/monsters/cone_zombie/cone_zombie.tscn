@@ -1,15 +1,15 @@
 [gd_scene load_steps=14 format=3 uid="uid://b6p55xptu0l7u"]
 
-[ext_resource type="Script" path="res://scenes/monsters/armor_zombie.gd" id="2_06vti"]
+[ext_resource type="Script" uid="uid://d3oi2coytxp2a" path="res://scenes/monsters/armor_zombie.gd" id="2_06vti"]
 [ext_resource type="Texture2D" uid="uid://dexwtdmy47iuu" path="res://assets/sprites/enemies/basic_zombie/basic_zombie_1.png" id="2_mpr13"]
 [ext_resource type="Texture2D" uid="uid://0wvksud1r2k5" path="res://assets/sprites/particles/White_Box_Half.png" id="3_7xmew"]
 [ext_resource type="Texture2D" uid="uid://bdfk7o7wd6y7u" path="res://assets/sprites/enemies/basic_zombie/basic_zombie_0.png" id="3_iqfgy"]
 [ext_resource type="Texture2D" uid="uid://dnxk84jqauaj3" path="res://assets/sprites/enemies/armor_cone/armor_cone_0.png" id="4_2to5f"]
-[ext_resource type="Script" path="res://scr/modules/health_node/health_node.gd" id="6_v8op4"]
-[ext_resource type="Script" path="res://scr/modules/hitbox_node/hitbox_node.gd" id="7_yyc7w"]
-[ext_resource type="Script" path="res://scr/modules/velocity_node/velocity_node.gd" id="8_1ays6"]
-[ext_resource type="Script" path="res://scr/modules/detection_node/detection_node.gd" id="9_xtk8v"]
-[ext_resource type="Script" path="res://scr/modules/effect_node/effect_node.gd" id="10_3ijpa"]
+[ext_resource type="Script" uid="uid://b2qbfur0em30t" path="res://scr/modules/health_node/health_node.gd" id="6_v8op4"]
+[ext_resource type="Script" uid="uid://dkmim27bj13ug" path="res://scr/modules/hitbox_node/hitbox_node.gd" id="7_yyc7w"]
+[ext_resource type="Script" uid="uid://c8a6xxe4td6jh" path="res://scr/modules/velocity_node/velocity_node.gd" id="8_1ays6"]
+[ext_resource type="Script" uid="uid://b61s5tqapx2uq" path="res://scr/modules/detection_node/detection_node.gd" id="9_xtk8v"]
+[ext_resource type="Script" uid="uid://d4j0qenqyb1wh" path="res://scr/modules/effect_node/effect_node.gd" id="10_3ijpa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4lrqe"]
 size = Vector2(32, 32)

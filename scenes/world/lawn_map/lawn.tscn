@@ -1,14 +1,14 @@
 [gd_scene load_steps=19 format=4 uid="uid://deucr2qqrbhs0"]
 
-[ext_resource type="Script" path="res://scenes/world/lawn_map/lawn.gd" id="1_1jhlw"]
-[ext_resource type="Script" path="res://scenes/ui/gui/gui.gd" id="1_7ch82"]
+[ext_resource type="Script" uid="uid://dxbdigxwvk6pf" path="res://scenes/world/lawn_map/lawn.gd" id="1_1jhlw"]
+[ext_resource type="Script" uid="uid://xxpaiiyut8y7" path="res://scenes/ui/gui/gui.gd" id="1_7ch82"]
 [ext_resource type="Texture2D" uid="uid://dppoq1jl2u1t1" path="res://assets/sprites/particles/sun_full.png" id="1_xpfp4"]
 [ext_resource type="Texture2D" uid="uid://be4uankdwxsky" path="res://assets/sprites/environment/world_tiles/grass_tiles.png" id="1_yq8x4"]
 [ext_resource type="Texture2D" uid="uid://c045lpga22nu3" path="res://assets/sprites/environment/world_tiles/world_tiles.png" id="2_ylyc8"]
 [ext_resource type="Texture2D" uid="uid://b50wtfwim1me0" path="res://assets/sprites/gui_icons/Shovel.png" id="4_dn200"]
 [ext_resource type="Texture2D" uid="uid://cwngscwbb6q7" path="res://assets/sprites/environment/world_tiles/slanted_world_tiles.png" id="4_hmk4k"]
 [ext_resource type="Texture2D" uid="uid://c7jqmv5ebuct" path="res://assets/sprites/environment/default_checker.png" id="5_grj22"]
-[ext_resource type="Script" path="res://scenes/world/lawn_map/wave_manager.gd" id="5_ilqr2"]
+[ext_resource type="Script" uid="uid://cpiongl68slv5" path="res://scenes/world/lawn_map/wave_manager.gd" id="5_ilqr2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04jvb"]
 texture = ExtResource("1_yq8x4")

@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_8mm5g"]
 [ext_resource type="Texture2D" uid="uid://dcinkm0aw3dro" path="res://assets/sprites/summons/seed_shooter/seed_shooter_idle.png" id="2_1lsqr"]
-[ext_resource type="Script" path="res://scenes/summons/bodies/seed_shooter/seed_shooter_body.gd" id="2_5jd3e"]
-[ext_resource type="Script" path="res://scr/modules/shooting_node/shooting_node.gd" id="3_bw6de"]
+[ext_resource type="Script" uid="uid://lmgbjovsye7n" path="res://scenes/summons/bodies/seed_shooter/seed_shooter_body.gd" id="2_5jd3e"]
+[ext_resource type="Script" uid="uid://b7kw043pekft3" path="res://scr/modules/shooting_node/shooting_node.gd" id="3_bw6de"]
 [ext_resource type="PackedScene" uid="uid://cb68p1j0jx5vu" path="res://scenes/projectiles/seed_projectile/seed_projectile.tscn" id="5_av5gk"]
-[ext_resource type="Script" path="res://scr/modules/lane_detector_node/lane_detector_node.gd" id="6_avcb4"]
+[ext_resource type="Script" uid="uid://ch1ptfo8qj1lw" path="res://scr/modules/lane_detector_node/lane_detector_node.gd" id="6_avcb4"]
 
 [node name="Summon_Body" node_paths=PackedStringArray("shooting_node", "lane_node") instance=ExtResource("1_8mm5g")]
 script = ExtResource("2_5jd3e")

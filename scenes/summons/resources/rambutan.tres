@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://c81qwubb3cb82"]
 
-[ext_resource type="Script" path="res://scenes/summons/summon_res.gd" id="1_yf33m"]
+[ext_resource type="Script" uid="uid://c40uoi7rkvxa" path="res://scenes/summons/summon_res.gd" id="1_yf33m"]
 [ext_resource type="PackedScene" uid="uid://lbvlq42oi4eq" path="res://scenes/summons/bodies/rambutan/rambutan_body.tscn" id="2_gsjaw"]
 
 [resource]

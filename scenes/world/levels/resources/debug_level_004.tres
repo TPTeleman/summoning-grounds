@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="LEVEL_DATA" load_steps=26 format=3 uid="uid://buhtrpmc7ps7i"]
 
 [ext_resource type="Texture2D" uid="uid://b2hk0l1gowpjv" path="res://assets/sprites/environment/map_bits/mapbit_014.png" id="1_gms68"]
-[ext_resource type="Script" path="res://scr/classes/level_data.gd" id="2_w81kb"]
-[ext_resource type="Script" path="res://scr/classes/wave_data.gd" id="3_ti5dk"]
-[ext_resource type="Script" path="res://scr/classes/horde_data.gd" id="4_j37oa"]
+[ext_resource type="Script" uid="uid://bjvmvyc56tv3x" path="res://scr/classes/level_data.gd" id="2_w81kb"]
+[ext_resource type="Script" uid="uid://bos2urowd6voe" path="res://scr/classes/wave_data.gd" id="3_ti5dk"]
+[ext_resource type="Script" uid="uid://ktx7e8rlv1fv" path="res://scr/classes/horde_data.gd" id="4_j37oa"]
 [ext_resource type="PackedScene" uid="uid://cg5cjwamygmk" path="res://scenes/monsters/basic_zombie/basic_zombie.tscn" id="5_1v81i"]
 [ext_resource type="PackedScene" uid="uid://b6p55xptu0l7u" path="res://scenes/monsters/cone_zombie/cone_zombie.tscn" id="6_r0fbi"]
 [ext_resource type="PackedScene" uid="uid://byt6sielbmukn" path="res://scenes/monsters/bucket_zombie/bucket_zombie.tscn" id="7_2q7nv"]

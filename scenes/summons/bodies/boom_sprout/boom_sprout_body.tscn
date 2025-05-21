@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_ixpbx"]
 [ext_resource type="Texture2D" uid="uid://dc00111oixcwj" path="res://assets/sprites/summons/boom_sprout/boom_sprout_state_1_idle.png" id="2_4x8rn"]
-[ext_resource type="Script" path="res://scenes/summons/bodies/boom_sprout/boom_sprout_body.gd" id="2_7rvol"]
-[ext_resource type="Script" path="res://scr/modules/detection_node/detection_node.gd" id="4_43vdd"]
+[ext_resource type="Script" uid="uid://djmoovwjsvlrn" path="res://scenes/summons/bodies/boom_sprout/boom_sprout_body.gd" id="2_7rvol"]
+[ext_resource type="Script" uid="uid://b61s5tqapx2uq" path="res://scr/modules/detection_node/detection_node.gd" id="4_43vdd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgx8s"]
 size = Vector2(52, 32)

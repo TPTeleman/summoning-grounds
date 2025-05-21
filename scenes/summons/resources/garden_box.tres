@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://c7mcg86o7mo07"]
 
-[ext_resource type="Script" path="res://scenes/summons/summon_res.gd" id="1_dn84d"]
+[ext_resource type="Script" uid="uid://c40uoi7rkvxa" path="res://scenes/summons/summon_res.gd" id="1_dn84d"]
 [ext_resource type="PackedScene" uid="uid://d2rry2sgjdepa" path="res://scenes/summons/bodies/garden_box/garden_box.tscn" id="2_ueyyp"]
 
 [resource]

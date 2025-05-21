@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://x0fvxvb64nyr"]
 
-[ext_resource type="Script" path="res://scenes/projectiles/straight_projectile.gd" id="1_xqgsg"]
-[ext_resource type="Script" path="res://scr/modules/detection_node/detection_node.gd" id="2_rcpra"]
+[ext_resource type="Script" uid="uid://bae83g8iffvqv" path="res://scenes/projectiles/straight_projectile.gd" id="1_xqgsg"]
+[ext_resource type="Script" uid="uid://b61s5tqapx2uq" path="res://scr/modules/detection_node/detection_node.gd" id="2_rcpra"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hrcr3"]
 

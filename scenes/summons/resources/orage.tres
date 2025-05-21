@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://dw4cusxye5xtm"]
 
-[ext_resource type="Script" path="res://scenes/summons/summon_res.gd" id="1_mc1jw"]
+[ext_resource type="Script" uid="uid://c40uoi7rkvxa" path="res://scenes/summons/summon_res.gd" id="1_mc1jw"]
 [ext_resource type="PackedScene" uid="uid://xfs8kixa5ikx" path="res://scenes/summons/bodies/orage/orage_body.tscn" id="2_15cj2"]
 
 [resource]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d2rry2sgjdepa"]
 
 [ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_hq4fk"]
-[ext_resource type="Script" path="res://scenes/summons/bodies/garden_box/garden_box.gd" id="2_qest5"]
+[ext_resource type="Script" uid="uid://df6q27xkpcj3a" path="res://scenes/summons/bodies/garden_box/garden_box.gd" id="2_qest5"]
 [ext_resource type="Texture2D" uid="uid://jkj1tyesj55l" path="res://assets/sprites/summons/garden_box/garden_box_idle.png" id="2_uugpr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7beot"]

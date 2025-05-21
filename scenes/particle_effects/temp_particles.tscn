@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dso06eqnphsl5"]
 
-[ext_resource type="Script" path="res://scenes/particle_effects/temp_particles.gd" id="1_n7pki"]
+[ext_resource type="Script" uid="uid://coyt2k5pp2odk" path="res://scenes/particle_effects/temp_particles.gd" id="1_n7pki"]
 
 [node name="Temp_Particles" type="Node2D"]
 script = ExtResource("1_n7pki")

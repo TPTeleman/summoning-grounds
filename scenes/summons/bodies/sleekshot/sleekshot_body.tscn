@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqwqffils0fmx"]
 
 [ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_minyq"]
-[ext_resource type="Script" path="res://scenes/summons/bodies/sleekshot/sleekshot_body.gd" id="2_m5wc0"]
+[ext_resource type="Script" uid="uid://b6iobxpt2or2g" path="res://scenes/summons/bodies/sleekshot/sleekshot_body.gd" id="2_m5wc0"]
 [ext_resource type="Texture2D" uid="uid://basyxdsu4i00r" path="res://assets/sprites/summons/sleekshot/sleekshot_idle.png" id="3_1m7f5"]
-[ext_resource type="Script" path="res://scr/modules/lobbing_node/lobbing_node.gd" id="4_10c62"]
+[ext_resource type="Script" uid="uid://dsx3qwnt07uae" path="res://scr/modules/lobbing_node/lobbing_node.gd" id="4_10c62"]
 [ext_resource type="PackedScene" uid="uid://c00tdh4bwhtg2" path="res://scenes/projectiles/leek_projectile/leek_projectile.tscn" id="5_8tvlf"]
-[ext_resource type="Script" path="res://scr/modules/lane_detector_node/lane_detector_node.gd" id="6_nvrkf"]
+[ext_resource type="Script" uid="uid://ch1ptfo8qj1lw" path="res://scr/modules/lane_detector_node/lane_detector_node.gd" id="6_nvrkf"]
 
 [node name="Summon_Body" node_paths=PackedStringArray("lobbing_node", "lane_node") instance=ExtResource("1_minyq")]
 script = ExtResource("2_m5wc0")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://yv0qi6fv06k4"]
 
-[ext_resource type="Script" path="res://scenes/summons/summon_res.gd" id="1_hfh3w"]
+[ext_resource type="Script" uid="uid://c40uoi7rkvxa" path="res://scenes/summons/summon_res.gd" id="1_hfh3w"]
 [ext_resource type="PackedScene" uid="uid://bch6f1v74ldcy" path="res://scenes/summons/bodies/strawberry_lobber/strawberry_lobber_body.tscn" id="2_u48p0"]
 
 [resource]

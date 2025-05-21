@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://ckrynjqh3lk53"]
 
-[ext_resource type="Script" path="res://scenes/ui/gui/summon_card/summon_card.gd" id="1_5i236"]
-[ext_resource type="Texture2D" uid="uid://bu20pnogf200d" path="res://assets/sprites/summon cards/summon_card_background.png" id="1_mh3jb"]
-[ext_resource type="Texture2D" uid="uid://dp4oxrapbumxd" path="res://assets/sprites/summon cards/summon faces/ilumilily_face.png" id="2_v40ls"]
-[ext_resource type="Texture2D" uid="uid://83q8s4udx3a7" path="res://assets/sprites/summon cards/summon_card_over.png" id="3_nsdhf"]
-[ext_resource type="Texture2D" uid="uid://jd0nv5gn5p68" path="res://assets/sprites/summon cards/summon_card_recharge.png" id="4_60q2a"]
-[ext_resource type="Texture2D" uid="uid://bc3umoktpegog" path="res://assets/sprites/summon cards/summon_card_selection.png" id="6_jsfxt"]
+[ext_resource type="Script" uid="uid://j63vwmtfklua" path="res://scenes/ui/gui/summon_card/summon_card.gd" id="1_5i236"]
+[ext_resource type="Texture2D" uid="uid://bu20pnogf200d" path="res://assets/sprites/summon_cards/summon_card_background.png" id="1_mh3jb"]
+[ext_resource type="Texture2D" uid="uid://dp4oxrapbumxd" path="res://assets/sprites/summon_cards/summon_faces/ilumilily_face.png" id="2_v40ls"]
+[ext_resource type="Texture2D" uid="uid://83q8s4udx3a7" path="res://assets/sprites/summon_cards/summon_card_over.png" id="3_nsdhf"]
+[ext_resource type="Texture2D" uid="uid://jd0nv5gn5p68" path="res://assets/sprites/summon_cards/summon_card_recharge.png" id="4_60q2a"]
+[ext_resource type="Texture2D" uid="uid://bc3umoktpegog" path="res://assets/sprites/summon_cards/summon_card_selection.png" id="6_jsfxt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_70ydy"]
 outline_size = 4

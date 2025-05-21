@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dn2g3v2rv1oux"]
 
-[ext_resource type="Script" path="res://scenes/projectiles/lobbed_projectile.gd" id="1_luatb"]
-[ext_resource type="Script" path="res://scr/modules/detection_node/detection_node.gd" id="2_wbdq3"]
+[ext_resource type="Script" uid="uid://c714qygsmri34" path="res://scenes/projectiles/lobbed_projectile.gd" id="1_luatb"]
+[ext_resource type="Script" uid="uid://b61s5tqapx2uq" path="res://scr/modules/detection_node/detection_node.gd" id="2_wbdq3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hrcr3"]
 

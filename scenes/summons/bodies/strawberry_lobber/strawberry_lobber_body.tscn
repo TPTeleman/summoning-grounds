@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_hksis"]
 [ext_resource type="Texture2D" uid="uid://dl82n608enmu5" path="res://assets/sprites/summons/strawberry_lobber/strawberry_lobber_idle.png" id="2_5bif8"]
-[ext_resource type="Script" path="res://scenes/summons/bodies/strawberry_lobber/strawberry_lobber_body.gd" id="2_puu6l"]
-[ext_resource type="Script" path="res://scr/modules/lobbing_node/lobbing_node.gd" id="3_x1575"]
+[ext_resource type="Script" uid="uid://bp0dd508yoect" path="res://scenes/summons/bodies/strawberry_lobber/strawberry_lobber_body.gd" id="2_puu6l"]
+[ext_resource type="Script" uid="uid://dsx3qwnt07uae" path="res://scr/modules/lobbing_node/lobbing_node.gd" id="3_x1575"]
 [ext_resource type="PackedScene" uid="uid://ouu7t25dvdg3" path="res://scenes/projectiles/strawberry_projectile/strawberry_projectile.tscn" id="4_e4dit"]
-[ext_resource type="Script" path="res://scr/modules/lane_detector_node/lane_detector_node.gd" id="5_fk01w"]
+[ext_resource type="Script" uid="uid://ch1ptfo8qj1lw" path="res://scr/modules/lane_detector_node/lane_detector_node.gd" id="5_fk01w"]
 
 [node name="Summon_Body" node_paths=PackedStringArray("lobbing_node", "lane_node") instance=ExtResource("1_hksis")]
 script = ExtResource("2_puu6l")
