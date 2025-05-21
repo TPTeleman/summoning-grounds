@@ -14,13 +14,17 @@ size = Vector2(96, 96)
 [node name="Summon_Body" node_paths=PackedStringArray("knockback_area") instance=ExtResource("1_da5oy")]
 script = ExtResource("2_26ql4")
 knockback_area = NodePath("Modules/Knockback_Area")
+knockback_power = 175
+knockback_duration = 0.225
+knockback_cooldown = 14.0
 
 [node name="Sprite" parent="Sprites" index="0"]
-position = Vector2(-5, -16)
+position = Vector2(0, -16)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_xbtyl")
 
 [node name="Health_Node" parent="Modules" index="0"]
-max_health = 750
+max_health = 900
 
 [node name="Collision_Shape" parent="Modules/Hitbox_Node" index="0"]
 shape = SubResource("RectangleShape2D_jsq42")

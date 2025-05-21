@@ -10,7 +10,6 @@ parent_group = "Summon"
 
 [node name="Sprite" parent="Sprites" index="0"]
 position = Vector2(0, 6)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_xy1av")
 
 [node name="Detection_Node" parent="." index="2"]

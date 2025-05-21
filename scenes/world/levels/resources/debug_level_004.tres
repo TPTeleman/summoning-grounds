@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LEVEL_DATA" load_steps=26 format=3 uid="uid://buhtrpmc7ps7i"]
 
-[ext_resource type="Texture2D" uid="uid://b2hk0l1gowpjv" path="res://assets/sprites/environment/map_bits/mapbit_014.png" id="1_gms68"]
+[ext_resource type="Texture2D" uid="uid://dif3sltnybcpv" path="res://assets/sprites/environment/map_bits/mapbit_008.png" id="1_8k527"]
 [ext_resource type="Script" uid="uid://bjvmvyc56tv3x" path="res://scr/classes/level_data.gd" id="2_w81kb"]
 [ext_resource type="Script" uid="uid://bos2urowd6voe" path="res://scr/classes/wave_data.gd" id="3_ti5dk"]
 [ext_resource type="Script" uid="uid://ktx7e8rlv1fv" path="res://scr/classes/horde_data.gd" id="4_j37oa"]
@@ -190,7 +190,7 @@ wave_duration = 999999.0
 
 [resource]
 script = ExtResource("2_w81kb")
-map = ExtResource("1_gms68")
+map = ExtResource("1_8k527")
 waves = Array[ExtResource("3_ti5dk")]([SubResource("Resource_et0su"), SubResource("Resource_vdm0y"), SubResource("Resource_2wea3"), SubResource("Resource_3mo2p"), SubResource("Resource_qo4jn"), SubResource("Resource_rehm3")])
 sun_falls = true
 starting_sun = 75

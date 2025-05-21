@@ -18,7 +18,7 @@ size = Vector2(32, 32)
 size = Vector2(26, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t08h4"]
-size = Vector2(42, 24)
+size = Vector2(38, 24)
 
 [node name="Monster_Body" type="CharacterBody2D" node_paths=PackedStringArray("health_node", "hitbox_node", "velocity_node", "detection_node", "effect_node") groups=["Monster"]]
 collision_layer = 0
@@ -79,7 +79,7 @@ script = ExtResource("8_ibbto")
 individual = NodePath("../..")
 
 [node name="Detection_Node" type="Area2D" parent="Modules" node_paths=PackedStringArray("individual")]
-position = Vector2(-5, 0)
+position = Vector2(-2, 0)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("9_1a3jw")

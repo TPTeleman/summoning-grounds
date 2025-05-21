@@ -5,7 +5,7 @@ var summon_array: Array[SUMMON_RES]
 var max_summons: int = 10
 var available_summons : Dictionary
 var cheat_cards: bool = true
-
+	
 
 func _ready() -> void:
 	dir_contents()

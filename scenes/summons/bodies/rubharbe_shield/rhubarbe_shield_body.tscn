@@ -19,7 +19,7 @@ texture = ExtResource("3_81gpp")
 speed_scale = 0.0
 
 [node name="Health_Node" parent="Modules" index="0"]
-max_health = 425
+max_health = 900
 
 [node name="Collision_Shape" parent="Modules/Hitbox_Node" index="0"]
 shape = SubResource("RectangleShape2D_jsq42")

@@ -14,7 +14,7 @@ lane_node = NodePath("Modules/Lane_Detector_Node")
 
 [node name="Sprite" parent="Sprites" index="0"]
 position = Vector2(-1, -28)
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.65, 0.65)
 texture = ExtResource("3_suwcg")
 
 [node name="Shooting_Node" type="Node" parent="Modules" index="2" node_paths=PackedStringArray("individual", "shoot_pos")]

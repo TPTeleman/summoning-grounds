@@ -51,7 +51,6 @@ lifetime = 0.25
 process_material = SubResource("ParticleProcessMaterial_yvsaq")
 
 [node name="Sprite" parent="Sprites" index="1"]
-scale = Vector2(2.3, 2.3)
 texture = ExtResource("2_d1rmu")
 
 [node name="Detection_Node" parent="." index="2"]
