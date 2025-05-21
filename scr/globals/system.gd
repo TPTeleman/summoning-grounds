@@ -12,15 +12,15 @@ func _ready() -> void:
 
 
 func dir_contents() -> void:
-	var dir = DirAccess.open("res://scenes/summons/resources/")
+	var dir := DirAccess.open("res://scenes/summons/resources/")
 	if dir:
 		dir.list_dir_begin()
-		var file_name = dir.get_next()
+		var file_name := dir.get_next()
 		while file_name != "":
-			var reduced_name = file_name.trim_suffix(".tres")
+			var reduced_name := file_name.trim_suffix(".tres")
 			if !dir.current_is_dir():
 				#print("Found file: " + reduced_name)
-				var summon = load("res://scenes/summons/resources/"+file_name) as SUMMON_RES
+				var summon: SUMMON_RES = load("res://scenes/summons/resources/"+file_name)
 				available_summons[summon.id] = reduced_name
 			file_name = dir.get_next()
 	else:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rj6kjsoir8mo"
-path="res://.godot/imported/cold_cotton_face.png-4b9b868a785c94f189d15da2ade8429d.ctex"
+uid="uid://bh7nddpvyjvgn"
+path="res://.godot/imported/seed_slinger_face.png-7967d97a9c39d73e342466eb8b39d4ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/summon cards/summon faces/cold_cotton_face.png"
-dest_files=["res://.godot/imported/cold_cotton_face.png-4b9b868a785c94f189d15da2ade8429d.ctex"]
+source_file="res://assets/sprites/summon_cards/summon_faces/seed_slinger_face.png"
+dest_files=["res://.godot/imported/seed_slinger_face.png-7967d97a9c39d73e342466eb8b39d4ff.ctex"]
 
 [params]
 

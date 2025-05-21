@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jd0nv5gn5p68"
-path="res://.godot/imported/summon_card_recharge.png-f4e95a9b692005fe84373aaa1b1b7fed.ctex"
+uid="uid://bgm6hcalctjbh"
+path="res://.godot/imported/boom_sprout_face.png-d705a1641b55bb5242566c24e28354e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/summon cards/summon_card_recharge.png"
-dest_files=["res://.godot/imported/summon_card_recharge.png-f4e95a9b692005fe84373aaa1b1b7fed.ctex"]
+source_file="res://assets/sprites/summon_cards/summon_faces/boom_sprout_face.png"
+dest_files=["res://.godot/imported/boom_sprout_face.png-d705a1641b55bb5242566c24e28354e7.ctex"]
 
 [params]
 

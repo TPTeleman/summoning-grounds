@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hxvgadqa80sr"
-path="res://.godot/imported/bulktato_face.png-983c5120f0e71f82eb27720a826f39a8.ctex"
+uid="uid://brsxrxtk1j2ch"
+path="res://.godot/imported/orage_face.png-fe8aec90b6859affe2f5ed185b425645.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/summon cards/summon faces/bulktato_face.png"
-dest_files=["res://.godot/imported/bulktato_face.png-983c5120f0e71f82eb27720a826f39a8.ctex"]
+source_file="res://assets/sprites/summon_cards/summon_faces/orage_face.png"
+dest_files=["res://.godot/imported/orage_face.png-fe8aec90b6859affe2f5ed185b425645.ctex"]
 
 [params]
 

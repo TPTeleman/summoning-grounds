@@ -40,7 +40,7 @@ func create_summon_select() -> void:
 		card_container.add_child(new_card)
 		new_card.id = i
 		new_card.summon_id = sum_res.id
-		new_card.face_rect.texture = load("res://assets/sprites/summon cards/summon faces/"+sum+"_face.png")
+		new_card.face_rect.texture = load("res://assets/sprites/summon_cards/summon_faces/"+sum+"_face.png")
 		new_card.update_price(sum_res.summon_cost)
 		new_card.on_click.connect(on_card_clicked)
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyp5m6a6l5phh"
-path="res://.godot/imported/garden_box_face.png-a89d70be503da80890f26e1c71720113.ctex"
+uid="uid://qq0wdlo0npuy"
+path="res://.godot/imported/strawberry_lobber_face.png-6ee8b0a9e6366fe36249d911f1f8bf38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/summon cards/summon faces/garden_box_face.png"
-dest_files=["res://.godot/imported/garden_box_face.png-a89d70be503da80890f26e1c71720113.ctex"]
+source_file="res://assets/sprites/summon_cards/summon_faces/strawberry_lobber_face.png"
+dest_files=["res://.godot/imported/strawberry_lobber_face.png-6ee8b0a9e6366fe36249d911f1f8bf38.ctex"]
 
 [params]
 

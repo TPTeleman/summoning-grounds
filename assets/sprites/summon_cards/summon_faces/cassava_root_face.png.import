@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp4oxrapbumxd"
-path="res://.godot/imported/ilumilily_face.png-4be14e1baedf1579fd14daf74f966847.ctex"
+uid="uid://lcujvrrswfwo"
+path="res://.godot/imported/cassava_root_face.png-0e1a671b71cc7a18cefa0e03079bca2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/summon cards/summon faces/ilumilily_face.png"
-dest_files=["res://.godot/imported/ilumilily_face.png-4be14e1baedf1579fd14daf74f966847.ctex"]
+source_file="res://assets/sprites/summon_cards/summon_faces/cassava_root_face.png"
+dest_files=["res://.godot/imported/cassava_root_face.png-0e1a671b71cc7a18cefa0e03079bca2a.ctex"]
 
 [params]
 

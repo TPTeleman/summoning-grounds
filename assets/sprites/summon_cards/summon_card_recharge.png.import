@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f1wxmx3a3y3s"
-path="res://.godot/imported/lotus_pad_face.png-c7a2462b8ac8137383358dcdcc806556.ctex"
+uid="uid://jd0nv5gn5p68"
+path="res://.godot/imported/summon_card_recharge.png-2c4b02d3d0a1bdd20c267cc84a25a6eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/summon cards/summon faces/lotus_pad_face.png"
-dest_files=["res://.godot/imported/lotus_pad_face.png-c7a2462b8ac8137383358dcdcc806556.ctex"]
+source_file="res://assets/sprites/summon_cards/summon_card_recharge.png"
+dest_files=["res://.godot/imported/summon_card_recharge.png-2c4b02d3d0a1bdd20c267cc84a25a6eb.ctex"]
 
 [params]
 

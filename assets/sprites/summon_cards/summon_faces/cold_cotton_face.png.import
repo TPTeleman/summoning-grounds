@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caryuo1vm0tjn"
-path="res://.godot/imported/sleekshot_face.png-86aa80d8ee664d4b12f721ccc8e20dfc.ctex"
+uid="uid://rj6kjsoir8mo"
+path="res://.godot/imported/cold_cotton_face.png-467e2a4f45c1049816cc41ed7c436927.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/summon cards/summon faces/sleekshot_face.png"
-dest_files=["res://.godot/imported/sleekshot_face.png-86aa80d8ee664d4b12f721ccc8e20dfc.ctex"]
+source_file="res://assets/sprites/summon_cards/summon_faces/cold_cotton_face.png"
+dest_files=["res://.godot/imported/cold_cotton_face.png-467e2a4f45c1049816cc41ed7c436927.ctex"]
 
 [params]
 
