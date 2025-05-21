@@ -22,9 +22,9 @@ script = ExtResource("3_x1575")
 individual = NodePath("../..")
 shoot_pos = NodePath("../../Shoot_Pos")
 projectile = ExtResource("4_e4dit")
-attack_cooldown = 1.75
+attack_cooldown = 3.6
 attack_variation = 0.185
-damage = 40
+damage = 60
 arc_trajectory = 190.0
 
 [node name="Lane_Detector_Node" type="Node" parent="Modules" index="3" node_paths=PackedStringArray("individual")]

@@ -44,12 +44,13 @@ func show_card_select() -> void:
 func create_summon_select():
 	for i in System.available_summons.size():
 		var sum = System.available_summons[i]
-		var sum_res = load("res://scenes/summons/resources/"+System.available_summons[i]+".tres") as SUMMON_RES
-		#print(System.available_summons[i])
-		var new_card = SUMMON_CARD_NODE.instantiate()
+		var sum_res: SUMMON_RES = load("res://scenes/summons/resources/"+System.available_summons[i]+".tres") as SUMMON_RES
+		var new_card: SUMMON_CARD = SUMMON_CARD_NODE.instantiate()
 		card_container.add_child(new_card)
 		new_card.id = i
 		new_card.summon_id = sum_res.id
+		if sum_res.is_premium:
+			new_card.set_premium_sprite()
 		new_card.face_rect.texture = load("res://assets/sprites/summon_cards/summon_faces/"+sum+"_face.png")
 		if System.cheat_cards:
 			sum_res.summon_cost = 0
@@ -167,7 +168,7 @@ func on_sun_change():
 func keybind_input(event) -> void:
 	if event.pressed:
 		match event.keycode:
-			KEY_Q:
+			KEY_TAB:
 				shovel_clicked.emit()
 			KEY_1:
 				var number = 1
@@ -194,27 +195,27 @@ func keybind_input(event) -> void:
 				if summon_container.get_child_count() >= number:
 					var card = summon_container.get_child(number-1) as SUMMON_CARD
 					card.on_click.emit(card)
-			KEY_6:
+			KEY_6, KEY_Q:
 				var number = 6
 				if summon_container.get_child_count() >= number:
 					var card = summon_container.get_child(number-1) as SUMMON_CARD
 					card.on_click.emit(card)
-			KEY_7:
+			KEY_7, KEY_W:
 				var number = 7
 				if summon_container.get_child_count() >= number:
 					var card = summon_container.get_child(number-1) as SUMMON_CARD
 					card.on_click.emit(card)
-			KEY_8:
+			KEY_8, KEY_E:
 				var number = 8
 				if summon_container.get_child_count() >= number:
 					var card = summon_container.get_child(number-1) as SUMMON_CARD
 					card.on_click.emit(card)
-			KEY_9:
+			KEY_9, KEY_R:
 				var number = 9
 				if summon_container.get_child_count() >= number:
 					var card = summon_container.get_child(number-1) as SUMMON_CARD
 					card.on_click.emit(card)
-			KEY_0:
+			KEY_0, KEY_T:
 				var number = 10
 				if summon_container.get_child_count() >= number:
 					var card = summon_container.get_child(number-1) as SUMMON_CARD

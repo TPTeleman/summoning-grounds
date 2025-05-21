@@ -7,9 +7,10 @@
 script = ExtResource("1_hfh3w")
 id = 4
 summon_body = ExtResource("2_u48p0")
-summon_cost = 150
+summon_cost = 275
 starting_charge = 7.5
 summon_cooldown = 7.5
+is_premium = false
 is_upgrade = false
 placement_tags = Array[String](["takes_space"])
 summon_cell = ""

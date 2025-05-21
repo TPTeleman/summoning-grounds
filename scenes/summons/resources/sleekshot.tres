@@ -7,7 +7,7 @@
 script = ExtResource("1_negm4")
 id = 12
 summon_body = ExtResource("2_bue5b")
-summon_cost = 225
+summon_cost = 175
 starting_charge = 12.0
 summon_cooldown = 12.0
 is_upgrade = false

@@ -35,11 +35,13 @@ func _input(event):
 func create_summon_select() -> void:
 	for i in System.available_summons.size():
 		var sum = System.available_summons[i]
-		var sum_res = load("res://scenes/summons/resources/"+System.available_summons[i]+".tres") as SUMMON_RES
-		var new_card = SUMMON_CARD_NODE.instantiate()
+		var sum_res: SUMMON_RES = load("res://scenes/summons/resources/"+System.available_summons[i]+".tres") as SUMMON_RES
+		var new_card: SUMMON_CARD = SUMMON_CARD_NODE.instantiate()
 		card_container.add_child(new_card)
 		new_card.id = i
 		new_card.summon_id = sum_res.id
+		if sum_res.is_premium:
+			new_card.set_premium_sprite()
 		new_card.face_rect.texture = load("res://assets/sprites/summon_cards/summon_faces/"+sum+"_face.png")
 		new_card.update_price(sum_res.summon_cost)
 		new_card.on_click.connect(on_card_clicked)

@@ -10,6 +10,7 @@ summon_body = ExtResource("2_qyk2b")
 summon_cost = 125
 starting_charge = 20.0
 summon_cooldown = 20.0
+is_premium = true
 is_upgrade = false
 placement_tags = Array[String](["is_hollow"])
 summon_cell = ""

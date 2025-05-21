@@ -1,12 +1,14 @@
 extends Node
 
+@export var is_cheating: bool = false
+
 @onready var lawn: LAWN = $Lawn
 @onready var main_menu: MENU = $Main_Menu
 @onready var almanac_control: ALMANAC = $Canvas_Layer/Almanac_Control
 
 
 func _ready():
-	pass
+	System.cheat_cards = is_cheating
 	#TranslationServer.set_locale("pt_br")
 
 

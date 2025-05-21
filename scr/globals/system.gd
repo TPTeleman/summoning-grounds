@@ -4,7 +4,7 @@ var sun_count: int = 0
 var summon_array: Array[SUMMON_RES]
 var max_summons: int = 10
 var available_summons : Dictionary
-var cheat_cards: bool = true
+var cheat_cards: bool = false
 	
 
 func _ready() -> void:

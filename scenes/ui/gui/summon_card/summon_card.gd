@@ -8,8 +8,10 @@ var summon_id : int
 @onready var background_rect: TextureRect = $Control/Background_Rect
 @onready var face_rect: TextureRect = $Control/Face_Rect
 @onready var over_rect: TextureRect = $Control/Over_Rect
+
 @onready var dark_rect: ColorRect = $Dark_Rect
 @onready var hover_rect: ColorRect = $Hover_Rect
+
 @onready var recharge_bar: TextureProgressBar = $Recharge_Bar
 @onready var cost_lbl: Label = $Cost_lbl
 @onready var selection_rect: TextureRect = $Selection_Rect
@@ -20,6 +22,11 @@ func _ready() -> void:
 	hover_rect.visible = false
 	selection_rect.visible = false
 	recharge_bar.value = 0
+
+
+func set_premium_sprite() -> void:
+	background_rect.texture = load("res://assets/sprites/summon_cards/premium_card_background.png")
+	over_rect.texture = load("res://assets/sprites/summon_cards/premium_card_over.png")
 
 
 func update_purchase(sun, value):
