@@ -10,6 +10,7 @@ summon_body = ExtResource("2_ileoa")
 summon_cost = 50
 starting_charge = 2.5
 summon_cooldown = 2.5
+is_premium = false
 is_upgrade = false
 placement_tags = Array[String](["is_floor"])
 summon_cell = "dirt"

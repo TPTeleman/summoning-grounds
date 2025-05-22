@@ -21,8 +21,8 @@ zombie_per_lane = {
 script = ExtResource("2_752n4")
 zombie_types = Array[PackedScene]([ExtResource("4_vxabw")])
 hordes = Array[ExtResource("3_x7m6j")]([SubResource("Resource_h0fv6")])
-spawn_rate = 12.0
-zombie_points = 0
+spawn_rate = 1.0
+zombie_points = 30
 wave_duration = 42.0
 
 [resource]

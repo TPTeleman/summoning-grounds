@@ -10,6 +10,7 @@ summon_body = ExtResource("2_gsjaw")
 summon_cost = 125
 starting_charge = 14.0
 summon_cooldown = 14.0
+is_premium = false
 is_upgrade = false
 placement_tags = Array[String](["takes_space"])
 summon_cell = ""

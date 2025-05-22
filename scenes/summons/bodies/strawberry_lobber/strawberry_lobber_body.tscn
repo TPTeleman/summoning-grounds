@@ -23,7 +23,7 @@ individual = NodePath("../..")
 shoot_pos = NodePath("../../Shoot_Pos")
 projectile = ExtResource("4_e4dit")
 attack_cooldown = 3.6
-attack_variation = 0.185
+attack_variation = 0.545
 damage = 60
 arc_trajectory = 190.0
 

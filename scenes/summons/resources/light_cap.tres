@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://bt30byj2xd2o6"]
+
+[ext_resource type="Script" uid="uid://c40uoi7rkvxa" path="res://scenes/summons/summon_res.gd" id="1_sol7s"]
+[ext_resource type="PackedScene" uid="uid://bip64rsxl8lyj" path="res://scenes/summons/bodies/light_cap/light_cap_body.tscn" id="2_sol7s"]
+
+[resource]
+script = ExtResource("1_sol7s")
+id = 13
+summon_body = ExtResource("2_sol7s")
+summon_cost = 75
+starting_charge = 8.0
+summon_cooldown = 32.0
+is_premium = false
+is_upgrade = false
+placement_tags = Array[String](["takes_space"])
+summon_cell = ""
+cell_type = Array[String](["dirt"])

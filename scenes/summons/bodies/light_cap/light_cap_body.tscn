@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bip64rsxl8lyj"]
+
+[ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_8laf6"]
+[ext_resource type="Script" uid="uid://dbpnyd2nu7kpw" path="res://scenes/summons/bodies/light_cap/light_cap_body.gd" id="2_4p3b4"]
+[ext_resource type="Texture2D" uid="uid://3s47xynvbdqt" path="res://assets/sprites/summons/light_cap/light_cap_state_1_idle.png" id="3_4p3b4"]
+[ext_resource type="Script" uid="uid://bg6xfcsnipi5f" path="res://scr/modules/sunmaker_node/sunmaker_node.gd" id="4_1nqnm"]
+
+[node name="Summon_Body" node_paths=PackedStringArray("sunmaker_node", "sunmaker_grown_node") instance=ExtResource("1_8laf6")]
+script = ExtResource("2_4p3b4")
+growth_delay = 260.0
+sunmaker_node = NodePath("SunMaker_Node")
+sunmaker_grown_node = NodePath("SunMaker_Grown_Node")
+
+[node name="Sprites" parent="." index="1"]
+position = Vector2(0, 9)
+
+[node name="Sprite" parent="Sprites" index="0"]
+position = Vector2(0, 0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_4p3b4")
+offset = Vector2(0, -50)
+
+[node name="SunMaker_Node" type="Node" parent="." index="3" node_paths=PackedStringArray("summon_body")]
+script = ExtResource("4_1nqnm")
+summon_body = NodePath("..")
+first_sun = 6.0
+generation_cooldown = 14.0
+sun_delay_range = 0.5
+sun_value = 15
+horizontal_speed = 600.0
+gravity_speed = 325.0
+fall_range = 24.0
+
+[node name="SunMaker_Grown_Node" type="Node" parent="." index="4" node_paths=PackedStringArray("summon_body")]
+script = ExtResource("4_1nqnm")
+summon_body = NodePath("..")
+first_sun = 14.0
+generation_cooldown = 14.0
+sun_delay_range = 0.75
+
+[node name="Health_Node" parent="Modules" index="0"]
+max_health = 50
+
+[node name="Grow_Timer" type="Timer" parent="." index="7"]
+wait_time = 8.0
+one_shot = true
+
+[connection signal="can_produce" from="SunMaker_Node" to="." method="_on_sun_maker_node_can_produce"]
+[connection signal="can_produce" from="SunMaker_Grown_Node" to="." method="_on_sun_maker_grown_node_can_produce"]
+[connection signal="timeout" from="Grow_Timer" to="." method="_on_grow_timer_timeout"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgifylhj6lw1f"]
+
+[ext_resource type="PackedScene" uid="uid://x0fvxvb64nyr" path="res://scenes/projectiles/straight_projectile.tscn" id="1_e5jdn"]
+[ext_resource type="Script" uid="uid://datvb681udmq3" path="res://scenes/projectiles/steam_gust/steam_gust.gd" id="2_6yof5"]
+[ext_resource type="Texture2D" uid="uid://cr8jhxbmbbyxj" path="res://assets/sprites/particles/water_bubble.png" id="3_6yof5"]
+
+[sub_resource type="Gradient" id="Gradient_ly5q0"]
+offsets = PackedFloat32Array(0.10989, 0.544218, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.24, 0.1008, 0.1124, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fnlqd"]
+gradient = SubResource("Gradient_ly5q0")
+
+[sub_resource type="Curve" id="Curve_6yof5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.484756, 0.844358), -7.14708, -7.14708, 0, 0, Vector2(1, 0), -3.43739, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_2capt"]
+curve = SubResource("Curve_6yof5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j3ftl"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(102, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(102, 4, 1)
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+gravity = Vector3(0, -480, 0)
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_2capt")
+color_ramp = SubResource("GradientTexture1D_fnlqd")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2capt"]
+size = Vector2(204, 20)
+
+[node name="Steam_Gust" node_paths=PackedStringArray("particles") instance=ExtResource("1_e5jdn")]
+script = ExtResource("2_6yof5")
+particles = NodePath("Sprites/Particles")
+parent_group = "Summon"
+
+[node name="Particles" type="GPUParticles2D" parent="Sprites" index="0"]
+emitting = false
+amount = 24
+texture = ExtResource("3_6yof5")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.65
+process_material = SubResource("ParticleProcessMaterial_j3ftl")
+
+[node name="Detection_Node" parent="." index="2"]
+position = Vector2(102, 0)
+collision_mask = 8
+
+[node name="Collision_Shape" parent="Detection_Node" index="0"]
+shape = SubResource("RectangleShape2D_2capt")
+
+[connection signal="hit_enemy" from="." to="." method="_on_hit_enemy"]

@@ -36,7 +36,7 @@ func processing_attack(delta):
 
 
 func shoot():
-	var new_projectile = individual.lawn.spawn_projectile(projectile) as STRAIGHT_PROJECTILE
+	var new_projectile = individual.lawn.spawn_projectile(projectile)
 	new_projectile.lane = individual.cell.y
 	new_projectile.damage = damage
 	if shoot_pos:

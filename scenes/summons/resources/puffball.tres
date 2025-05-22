@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://vptqvsqhedu4"]
+
+[ext_resource type="Script" uid="uid://c40uoi7rkvxa" path="res://scenes/summons/summon_res.gd" id="1_2653o"]
+[ext_resource type="PackedScene" uid="uid://dfoidvtg8n16a" path="res://scenes/summons/bodies/puffball/puffball_body.tscn" id="2_2653o"]
+
+[resource]
+script = ExtResource("1_2653o")
+id = 14
+summon_body = ExtResource("2_2653o")
+summon_cost = 15
+starting_charge = 2.5
+summon_cooldown = 5.5
+is_premium = false
+is_upgrade = false
+placement_tags = Array[String](["takes_space"])
+summon_cell = ""
+cell_type = Array[String](["dirt"])

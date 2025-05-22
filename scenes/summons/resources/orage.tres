@@ -10,6 +10,7 @@ summon_body = ExtResource("2_15cj2")
 summon_cost = 250
 starting_charge = 12.0
 summon_cooldown = 12.0
+is_premium = false
 is_upgrade = false
 placement_tags = Array[String](["takes_space"])
 summon_cell = ""

@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcfm1ge818kjt"]
+
+[ext_resource type="PackedScene" uid="uid://x0fvxvb64nyr" path="res://scenes/projectiles/straight_projectile.tscn" id="1_23qfj"]
+[ext_resource type="Texture2D" uid="uid://cqrxgpk5qadx2" path="res://assets/sprites/particles/puff_bubble.png" id="2_hnc0e"]
+
+[sub_resource type="Gradient" id="Gradient_ly5q0"]
+offsets = PackedFloat32Array(0.10989, 0.544218, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.24, 0.1008, 0.1124, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fnlqd"]
+gradient = SubResource("Gradient_ly5q0")
+
+[sub_resource type="Curve" id="Curve_xkt2d"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.43739, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pd6o4"]
+curve = SubResource("Curve_xkt2d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xndjp"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 12.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+gravity = Vector3(0, 178, 0)
+scale_min = 0.3
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_pd6o4")
+color_ramp = SubResource("GradientTexture1D_fnlqd")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1cj0k"]
+
+[node name="Puff_Bubble" instance=ExtResource("1_23qfj")]
+projectile_speed = 280.0
+projectile_range = 168.0
+range_limit = true
+parent_group = "Summon"
+
+[node name="Sprites" parent="." index="1"]
+scale = Vector2(0.8, 0.8)
+
+[node name="Particles" type="GPUParticles2D" parent="Sprites" index="0"]
+amount = 12
+texture = ExtResource("2_hnc0e")
+lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_xndjp")
+
+[node name="Sprite" parent="Sprites" index="1"]
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("2_hnc0e")
+
+[node name="Detection_Node" parent="." index="2"]
+collision_mask = 8
+
+[node name="Collision_Shape" parent="Detection_Node" index="0"]
+shape = SubResource("CircleShape2D_1cj0k")
+
+[connection signal="hit_enemy" from="." to="." method="_on_hit_enemy"]

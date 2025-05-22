@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfoidvtg8n16a"]
+
+[ext_resource type="PackedScene" uid="uid://xinueaen881v" path="res://scenes/summons/bodies/summon_body.tscn" id="1_r4wqd"]
+[ext_resource type="Script" uid="uid://lmgbjovsye7n" path="res://scenes/summons/bodies/seed_shooter/seed_shooter_body.gd" id="2_ksn5g"]
+[ext_resource type="Texture2D" uid="uid://cimq4hcfjcan3" path="res://assets/sprites/summons/puffball/puffball_idle.png" id="3_r4wqd"]
+[ext_resource type="Script" uid="uid://b7kw043pekft3" path="res://scr/modules/shooting_node/shooting_node.gd" id="4_0kmav"]
+[ext_resource type="PackedScene" uid="uid://bcfm1ge818kjt" path="res://scenes/projectiles/puff_bubble/puff_bubble.tscn" id="5_r4wqd"]
+[ext_resource type="Script" uid="uid://ch1ptfo8qj1lw" path="res://scr/modules/lane_detector_node/lane_detector_node.gd" id="6_qoero"]
+
+[node name="Summon_Body" node_paths=PackedStringArray("shooting_node", "lane_node") instance=ExtResource("1_r4wqd")]
+script = ExtResource("2_ksn5g")
+shooting_node = NodePath("Modules/Shooting_Node")
+lane_node = NodePath("Modules/Lane_Detector_Node")
+
+[node name="Sprites" parent="." index="1"]
+position = Vector2(0, 9)
+
+[node name="Sprite" parent="Sprites" index="0"]
+position = Vector2(0, 0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_r4wqd")
+offset = Vector2(0, -50)
+
+[node name="Health_Node" parent="Modules" index="0"]
+max_health = 50
+
+[node name="Shooting_Node" type="Node" parent="Modules" index="2" node_paths=PackedStringArray("individual", "shoot_pos")]
+script = ExtResource("4_0kmav")
+individual = NodePath("../..")
+shoot_pos = NodePath("../../Shoot_Pos")
+projectile = ExtResource("5_r4wqd")
+attack_cooldown = 0.905
+attack_variation = 0.145
+
+[node name="Lane_Detector_Node" type="Node" parent="Modules" index="3" node_paths=PackedStringArray("individual")]
+script = ExtResource("6_qoero")
+individual = NodePath("../..")
+lane_range = 168.0
+
+[node name="Shoot_Pos" type="Marker2D" parent="." index="5"]
+position = Vector2(7, -12)

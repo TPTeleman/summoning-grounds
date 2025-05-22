@@ -22,4 +22,4 @@ speed_scale = 0.0
 shape = SubResource("RectangleShape2D_7beot")
 
 [node name="Summon_Pos" type="Marker2D" parent="." index="5"]
-position = Vector2(0, -2)
+position = Vector2(0, 3)
