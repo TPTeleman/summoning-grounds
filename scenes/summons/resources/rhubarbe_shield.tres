@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SUMMON_RES" load_steps=3 format=3 uid="uid://bgjxwk68sptjm"]
 
 [ext_resource type="Script" uid="uid://c40uoi7rkvxa" path="res://scenes/summons/summon_res.gd" id="1_qyk2b"]
-[ext_resource type="PackedScene" uid="uid://c8ibutmsetc83" path="res://scenes/summons/bodies/rubharbe_shield/rhubarbe_shield_body.tscn" id="2_qyk2b"]
+[ext_resource type="PackedScene" uid="uid://c8ibutmsetc83" path="res://scenes/summons/bodies/rhubarbe_shield/rhubarbe_shield_body.tscn" id="2_qyk2b"]
 
 [resource]
 script = ExtResource("1_qyk2b")

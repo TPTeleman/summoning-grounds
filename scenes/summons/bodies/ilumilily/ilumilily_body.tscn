@@ -17,8 +17,8 @@ texture = ExtResource("3_fkfyd")
 [node name="SunMaker_Node" type="Node" parent="." index="3" node_paths=PackedStringArray("summon_body")]
 script = ExtResource("2_363j6")
 summon_body = NodePath("..")
-first_sun = 6.5
-generation_cooldown = 24.0
+first_sun = 6.0
+generation_cooldown = 25.5
 sun_delay_range = 0.55
 
 [connection signal="can_produce" from="SunMaker_Node" to="." method="_on_sun_maker_node_can_produce"]

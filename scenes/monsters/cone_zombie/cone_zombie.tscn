@@ -42,17 +42,17 @@ debug_color = Color(0.23793, 0.618422, 0.440188, 0.42)
 y_sort_enabled = true
 
 [node name="Water_Clip" type="Sprite2D" parent="Sprites"]
-position = Vector2(-9, -37)
-scale = Vector2(0.164062, 0.289063)
+position = Vector2(-11, -51)
+scale = Vector2(0.211765, 0.373563)
 texture = ExtResource("3_7xmew")
 
 [node name="Sprite" type="Sprite2D" parent="Sprites/Water_Clip"]
-position = Vector2(0, 58.8108)
-scale = Vector2(9.14286, 5.18919)
+position = Vector2(4.72222, 69.6)
+scale = Vector2(4.72222, 2.67692)
 texture = ExtResource("3_iqfgy")
 
 [node name="Armor_Sprite" type="Sprite2D" parent="Sprites/Water_Clip/Sprite"]
-position = Vector2(-1.33333, -18)
+position = Vector2(-2, -35)
 texture = ExtResource("4_2to5f")
 
 [node name="Modules" type="Node2D" parent="."]

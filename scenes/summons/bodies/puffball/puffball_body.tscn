@@ -38,4 +38,4 @@ individual = NodePath("../..")
 lane_range = 168.0
 
 [node name="Shoot_Pos" type="Marker2D" parent="." index="5"]
-position = Vector2(7, -12)
+position = Vector2(7, -14)

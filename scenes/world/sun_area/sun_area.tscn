@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://jxyifyy5cbyi"]
+[gd_scene load_steps=7 format=3 uid="uid://jxyifyy5cbyi"]
 
 [ext_resource type="Texture2D" uid="uid://g23omxdid0h8" path="res://assets/sprites/particles/sun_ring.png" id="1_nha1t"]
 [ext_resource type="Script" uid="uid://dg5n7t2qji5n6" path="res://scenes/world/sun_area/sun_area.gd" id="1_wqqpv"]
 [ext_resource type="Texture2D" uid="uid://b8jeunqduuh5r" path="res://assets/sprites/particles/sun_ball.png" id="2_quvtk"]
+[ext_resource type="Texture2D" uid="uid://cjjlx16bmpir4" path="res://assets/sprites/particles/Light_Texture.png" id="4_vikxu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0mloa"]
 radius = 24.0
@@ -32,6 +33,11 @@ texture = ExtResource("2_quvtk")
 
 [node name="Collision_Shape" type="CollisionShape2D" parent="Mouse_Area"]
 shape = SubResource("CircleShape2D_0mloa")
+
+[node name="Sun_Light" type="PointLight2D" parent="."]
+energy = 0.55
+texture = ExtResource("4_vikxu")
+texture_scale = 1.2
 
 [node name="Despawn_Timer" type="Timer" parent="."]
 wait_time = 6.5

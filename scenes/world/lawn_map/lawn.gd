@@ -43,6 +43,7 @@ var on_almanac: bool = false
 @onready var enemies_node: Node2D = $Enemies
 @onready var wave_manager: WAVE_MANAGER = $Wave_Manager
 
+@onready var night_canvas: CanvasModulate = $Night_Canvas
 @onready var default_grid: TileMapLayer = $Map/Default_Grid
 @onready var slanted_grid: TileMapLayer = $Map/Slanted_Grid
 
@@ -61,7 +62,7 @@ func _ready() -> void:
 	#enter_lawn()
 
 
-func enter_lawn(level_res: String) -> void:
+func enter_lawn(level_res: LEVEL_DATA) -> void:
 	gui.create_summon_select()
 	set_level(level_res)
 	create_grid()
@@ -104,11 +105,12 @@ func _on_start_button_button_down() -> void:
 		print("Not enough summons!")
 
 
-func set_level(level_res: String) -> void:
-	var level = load("res://scenes/world/levels/resources/"+level_res+".tres")
-	level_data = level
-	wave_manager.level_data = level
+func set_level(level_res: LEVEL_DATA) -> void:
+	level_data = level_res
+	wave_manager.level_data = level_res
 	set_sun(level_data.starting_sun)
+	
+	night_canvas.visible = !level_data.sun_falls
 
 
 func start_level() -> void:
@@ -147,6 +149,8 @@ func exit_level() -> void:
 	grid.clear()
 	default_grid.clear()
 	slanted_grid.clear()
+	
+	night_canvas.hide()
 
 	sun_timer.stop()
 	first_sun.stop()
@@ -416,6 +420,7 @@ func spawn_sun(pos: Vector2, sun_value: int = 25, fall_variant: int = 0) -> SUN:
 	else:
 		new_sun.scale = Vector2(0.8, 0.8)+Vector2(0.2*(float(sun_value)/25), 0.2*(float(sun_value)/25))
 	objects.add_child(new_sun)
+	new_sun.light.visible = !level_data.sun_falls
 	new_sun.sun_collected.connect(on_sun_collected)
 	return new_sun
 
@@ -426,6 +431,7 @@ func on_sun_collected(node) -> void:
 	sun_anim.position = node.position
 	sun_anim.scale = node.scale
 	gui.add_child(sun_anim)
+	sun_anim.light.visible = !level_data.sun_falls
 	sun_anim.get_node("Timer").start(0.65)
 	tween.tween_property(sun_anim, "global_position", gui.sun_rect.global_position+Vector2(32, 32), 0.65)
 	gain_sun(node.sun_value)

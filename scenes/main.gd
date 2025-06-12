@@ -17,10 +17,7 @@ func return_to_menu() -> void:
 
 
 func _on_main_menu_play_pressed() -> void:
-	#var number = "002"
-	var number = ["001","002","003","004","005","006","007","008","009","010","011","012","013","014"].pick_random()
-	#var number = ["001","002","003","004"].pick_random()
-	lawn.enter_lawn("debug_level_"+number)
+	lawn.enter_lawn(System.get_random_level(["night","day"].pick_random()))
 	main_menu.hide()
 
 

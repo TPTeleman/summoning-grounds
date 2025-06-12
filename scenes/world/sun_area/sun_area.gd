@@ -20,6 +20,8 @@ var on_the_ground: bool = false
 @onready var sprite_cluster: Node2D = $Sprite_Cluster
 @onready var sun_ring: Sprite2D = $Sprite_Cluster/Sun_Ring
 @onready var sun_center: Sprite2D = $Sprite_Cluster/Sun_Center
+@onready var light: PointLight2D = $Sun_Light
+
 @onready var collision_shape = $Mouse_Area/Collision_Shape
 @onready var despawn_timer: Timer = $Despawn_Timer
 @onready var label: Label = $Label

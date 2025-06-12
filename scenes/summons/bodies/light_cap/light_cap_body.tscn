@@ -7,7 +7,7 @@
 
 [node name="Summon_Body" node_paths=PackedStringArray("sunmaker_node", "sunmaker_grown_node") instance=ExtResource("1_8laf6")]
 script = ExtResource("2_4p3b4")
-growth_delay = 260.0
+growth_delay = 140.0
 sunmaker_node = NodePath("SunMaker_Node")
 sunmaker_grown_node = NodePath("SunMaker_Grown_Node")
 
@@ -24,7 +24,7 @@ offset = Vector2(0, -50)
 script = ExtResource("4_1nqnm")
 summon_body = NodePath("..")
 first_sun = 6.0
-generation_cooldown = 14.0
+generation_cooldown = 15.5
 sun_delay_range = 0.5
 sun_value = 15
 horizontal_speed = 600.0
@@ -34,8 +34,8 @@ fall_range = 24.0
 [node name="SunMaker_Grown_Node" type="Node" parent="." index="4" node_paths=PackedStringArray("summon_body")]
 script = ExtResource("4_1nqnm")
 summon_body = NodePath("..")
-first_sun = 14.0
-generation_cooldown = 14.0
+first_sun = 13.0
+generation_cooldown = 15.5
 sun_delay_range = 0.75
 
 [node name="Health_Node" parent="Modules" index="0"]

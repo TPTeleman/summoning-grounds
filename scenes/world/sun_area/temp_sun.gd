@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var light: PointLight2D = $Sun_Light
+
 
 func _on_timer_timeout() -> void:
 	var tween := create_tween()

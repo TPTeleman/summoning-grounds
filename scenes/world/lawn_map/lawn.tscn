@@ -452,6 +452,10 @@ metadata/_edit_lock_ = true
 z_index = 2
 metadata/_edit_lock_ = true
 
+[node name="Night_Canvas" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.343425, 0.2679, 0.57, 1)
+
 [node name="Wave_Manager" type="Node" parent="." node_paths=PackedStringArray("lawn")]
 script = ExtResource("5_ilqr2")
 lawn = NodePath("..")
